@@ -2,6 +2,7 @@ package com.example.an_addon;
 
 import com.example.an_addon.glyphs.TestEffect;
 import com.example.an_addon.ritual.ManaRegenRitual;
+import com.example.an_addon.ritual.PlatformRitual;
 import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
 
@@ -20,6 +21,7 @@ public class ArsNouveauRegistry {
         ArsNouveauAPI.getInstance().registerSpell(spellPart);
         registeredSpells.add(spellPart);
         ArsNouveauAPI.getInstance().registerRitual(new ManaRegenRitual());
+        ArsNouveauAPI.getInstance().registerRitual(new PlatformRitual());
     }
 
 }

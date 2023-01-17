@@ -1,0 +1,24 @@
+{
+  "type": "ars_nouveau:crush",
+  "input": {
+    "tag": "forge:stone"
+  },
+  "output": [
+    {
+      "chance": 1.0,
+      "count": 1,
+      "item": "minecraft:gravel"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "item": "minecraft:gold_nugget"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "skip_block_place": false
+}

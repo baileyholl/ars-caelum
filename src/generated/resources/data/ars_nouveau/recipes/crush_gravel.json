@@ -1,0 +1,29 @@
+{
+  "type": "ars_nouveau:crush",
+  "input": {
+    "tag": "forge:gravel"
+  },
+  "output": [
+    {
+      "chance": 1.0,
+      "count": 1,
+      "item": "minecraft:sand"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "chance": 0.01,
+      "count": 1,
+      "item": "minecraft:diamond"
+    },
+    {
+      "chance": 0.02,
+      "count": 1,
+      "item": "minecraft:flint"
+    }
+  ],
+  "skip_block_place": false
+}
