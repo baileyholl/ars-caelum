@@ -14,14 +14,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ExampleANAddon.MODID)
-public class ExampleANAddon
+@Mod(ArsCaelum.MODID)
+public class ArsCaelum
 {
     public static final String MODID = "ars_caelum";
 
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public ExampleANAddon() {
+    public ArsCaelum() {
         IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
         ModRegistry.registerRegistries(modbus);
         ArsNouveauRegistry.registerGlyphs();

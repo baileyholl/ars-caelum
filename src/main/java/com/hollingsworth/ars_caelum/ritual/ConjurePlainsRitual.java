@@ -1,6 +1,6 @@
 package com.hollingsworth.ars_caelum.ritual;
 
-import com.hollingsworth.ars_caelum.ExampleANAddon;
+import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.ars_caelum.util.ManhattenTracker;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
@@ -58,7 +58,7 @@ public class ConjurePlainsRitual extends AbstractRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ExampleANAddon.MODID, RitualLang.PLATFORM);
+        return new ResourceLocation(ArsCaelum.MODID, RitualLang.PLATFORM);
     }
 
     @Override

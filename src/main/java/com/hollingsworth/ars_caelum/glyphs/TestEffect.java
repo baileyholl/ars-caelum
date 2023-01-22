@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 
 import java.util.Set;
 
-import static com.hollingsworth.ars_caelum.ExampleANAddon.prefix;
+import static com.hollingsworth.ars_caelum.ArsCaelum.prefix;
 
 public class TestEffect extends AbstractEffect {
 

@@ -1,12 +1,12 @@
 package com.hollingsworth.ars_caelum.datagen;
 
-import com.hollingsworth.ars_caelum.ExampleANAddon;
+import com.hollingsworth.ars_caelum.ArsCaelum;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = ExampleANAddon.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = ArsCaelum.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Setup {
 
     //use runData configuration to generate stuff, event.includeServer() for data, event.includeClient() for assets
@@ -19,7 +19,7 @@ public class Setup {
         gen.addProvider(event.includeServer(), new ArsProviders.EnchantingAppProvider(gen));
         gen.addProvider(event.includeServer(), new ArsProviders.CrushProvider(gen));
         gen.addProvider(event.includeServer(), new ArsProviders.PatchouliProvider(gen));
-        gen.addProvider(event.includeClient(), new LangGen(gen, ExampleANAddon.MODID, "en_us"));
+        gen.addProvider(event.includeClient(), new LangGen(gen, ArsCaelum.MODID, "en_us"));
         gen.addProvider(event.includeServer(), new RecipeData(gen));
     }
 

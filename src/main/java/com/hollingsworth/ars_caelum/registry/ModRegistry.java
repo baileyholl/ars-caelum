@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static com.hollingsworth.ars_caelum.ExampleANAddon.MODID;
+import static com.hollingsworth.ars_caelum.ArsCaelum.MODID;
 
 public class ModRegistry {
 

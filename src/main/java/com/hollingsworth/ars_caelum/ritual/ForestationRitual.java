@@ -1,6 +1,6 @@
 package com.hollingsworth.ars_caelum.ritual;
 
-import com.hollingsworth.ars_caelum.ExampleANAddon;
+import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.ars_caelum.ritual.features.BonemealFeature;
 import com.hollingsworth.ars_caelum.ritual.features.RandomTreeFeature;
@@ -20,6 +20,6 @@ public class ForestationRitual extends FeaturePlacementRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ExampleANAddon.MODID, RitualLang.FORESTATION);
+        return new ResourceLocation(ArsCaelum.MODID, RitualLang.FORESTATION);
     }
 }

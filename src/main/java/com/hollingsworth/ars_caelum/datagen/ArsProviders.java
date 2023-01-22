@@ -1,7 +1,7 @@
 package com.hollingsworth.ars_caelum.datagen;
 
 import com.hollingsworth.ars_caelum.ArsNouveauRegistry;
-import com.hollingsworth.ars_caelum.ExampleANAddon;
+import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.enchanting_apparatus.EnchantingApparatusRecipe;
 import com.hollingsworth.arsnouveau.api.familiar.AbstractFamiliarHolder;
@@ -37,7 +37,7 @@ import static com.hollingsworth.arsnouveau.api.RegistryHelper.getRegistryName;
 
 public class ArsProviders {
 
-    static String root = ExampleANAddon.MODID;
+    static String root = ArsCaelum.MODID;
 
     public static class CrushProvider extends CrushRecipeProvider{
         public DataGenerator generator;
@@ -81,7 +81,7 @@ public class ArsProviders {
         }
 
         private static Path getRecipePath(Path pathIn, String str) {
-            return pathIn.resolve("data/" + ExampleANAddon.MODID + "/recipes/" + str + ".json");
+            return pathIn.resolve("data/" + ArsCaelum.MODID + "/recipes/" + str + ".json");
         }
         private static Path getANPath(Path pathIn, String str) {
             return pathIn.resolve("data/" + ArsNouveau.MODID + "/recipes/" + str + ".json");

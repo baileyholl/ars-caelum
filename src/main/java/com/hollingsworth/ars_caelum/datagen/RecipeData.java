@@ -1,6 +1,6 @@
 package com.hollingsworth.ars_caelum.datagen;
 
-import com.hollingsworth.ars_caelum.ExampleANAddon;
+import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
 import com.hollingsworth.arsnouveau.common.items.RitualTablet;
@@ -18,10 +18,10 @@ public class RecipeData extends com.hollingsworth.arsnouveau.common.datagen.Reci
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-        shapelessBuilder(getAddonRitual(RitualLang.COBBLE)).requires(BlockRegistry.CASCADING_LOG).requires(BlockRegistry.FROSTAYA_POD).save(consumer, new ResourceLocation(ExampleANAddon.MODID, "cobble_ritual"));
+        shapelessBuilder(getAddonRitual(RitualLang.COBBLE)).requires(BlockRegistry.CASCADING_LOG).requires(BlockRegistry.FROSTAYA_POD).save(consumer, new ResourceLocation(ArsCaelum.MODID, "cobble_ritual"));
     }
 
     public RitualTablet getAddonRitual(String name) {
-        return ArsNouveauAPI.getInstance().getRitualItemMap().get(new ResourceLocation(ExampleANAddon.MODID, name));
+        return ArsNouveauAPI.getInstance().getRitualItemMap().get(new ResourceLocation(ArsCaelum.MODID, name));
     }
 }
