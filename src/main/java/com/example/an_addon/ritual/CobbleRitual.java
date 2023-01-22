@@ -19,7 +19,7 @@ public class CobbleRitual extends AbstractRitual {
         if(getWorld().isClientSide){
             ParticleUtil.spawnRitualAreaEffect(getPos(), getWorld(), getWorld().getRandom(), getCenterColor(), range);
         }else{
-            if(getWorld().getGameTime() % 20 == 0){
+            if(getWorld().getGameTime() % 15 == 0){
                 for(BlockPos pos : BlockPos.betweenClosed(getPos().offset(-range, -1, -range), getPos().offset(range, 1, range))){
                     if(getWorld().getBlockState(pos).getFluidState().isSource() && getWorld().getBlockState(pos).is(Blocks.WATER) ){
                         getWorld().setBlock(pos, Blocks.AIR.defaultBlockState(), 2);

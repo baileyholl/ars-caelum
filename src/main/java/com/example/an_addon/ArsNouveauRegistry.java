@@ -1,8 +1,9 @@
 package com.example.an_addon;
 
 import com.example.an_addon.ritual.CobbleRitual;
+import com.example.an_addon.ritual.ForestationRitual;
 import com.example.an_addon.ritual.ManaRegenRitual;
-import com.example.an_addon.ritual.PlatformRitual;
+import com.example.an_addon.ritual.ConjurePlainsRitual;
 import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
 
@@ -15,8 +16,9 @@ public class ArsNouveauRegistry {
 
     public static void registerGlyphs(){
         ArsNouveauAPI.getInstance().registerRitual(new ManaRegenRitual());
-        ArsNouveauAPI.getInstance().registerRitual(new PlatformRitual());
+        ArsNouveauAPI.getInstance().registerRitual(new ConjurePlainsRitual());
         ArsNouveauAPI.getInstance().registerRitual(new CobbleRitual());
+        ArsNouveauAPI.getInstance().registerRitual(new ForestationRitual());
     }
 
     public static void register(AbstractSpellPart spellPart){

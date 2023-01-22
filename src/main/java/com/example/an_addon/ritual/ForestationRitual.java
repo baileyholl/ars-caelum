@@ -2,31 +2,20 @@ package com.example.an_addon.ritual;
 
 import com.example.an_addon.ExampleANAddon;
 import com.example.an_addon.lib.RitualLang;
-import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
-import com.hollingsworth.arsnouveau.api.util.BlockUtil;
-import net.minecraft.core.BlockPos;
+import com.example.an_addon.ritual.features.BonemealFeature;
+import com.example.an_addon.ritual.features.RandomTreeFeature;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class ForestationRitual extends AbstractRitual {
+public class ForestationRitual extends FeaturePlacementRitual {
 
-    Map<String, List<BlockPos>> featurePlacedMap = new HashMap<>();
 
     @Override
-    protected void tick() {
-        if(getWorld().isClientSide){
-            return;
-        }
-        int radius = 7;
-        for(BlockPos pos : BlockPos.betweenClosed(getPos().offset(-radius, 0, -radius), getPos().offset(radius, 0, radius))){
-            if(BlockUtil.distanceFrom(pos, getPos()) > radius){
-                continue;
-            }
-        }
-
+    void addFeatures(List<IPlaceableFeature> features) {
+        features.add(new RandomTreeFeature(List.of(Blocks.OAK_SAPLING.defaultBlockState(), Blocks.BIRCH_SAPLING.defaultBlockState(), Blocks.SPRUCE_SAPLING.defaultBlockState()), 5));
+        features.add(new BonemealFeature(8));
     }
 
     @Override
