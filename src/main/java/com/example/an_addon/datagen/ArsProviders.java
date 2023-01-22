@@ -70,7 +70,6 @@ public class ArsProviders {
             replaceAn.add(new CrushRecipe("sand", Ingredient.of(Tags.Items.SAND))
                     .withItems(Items.CLAY_BALL.getDefaultInstance(), 0.05f)
                     .withItems(Items.REDSTONE.getDefaultInstance(), 0.2f).skipBlockPlace());
-
             Path output = this.generator.getOutputFolder();
             for (CrushRecipe g : recipes) {
                 Path path = getRecipePath(output, g.getId().getPath());

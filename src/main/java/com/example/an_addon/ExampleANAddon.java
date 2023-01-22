@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 @Mod(ExampleANAddon.MODID)
 public class ExampleANAddon
 {
-    public static final String MODID = "an_addon";
+    public static final String MODID = "ars_caelum";
 
     private static final Logger LOGGER = LogManager.getLogger();
 
