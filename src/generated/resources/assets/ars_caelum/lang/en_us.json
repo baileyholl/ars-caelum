@@ -1,8 +1,10 @@
 {
-  "ars_caelum.ritual_desc.mana_regen_ritual": "",
-  "ars_caelum.ritual_desc.platform_ritual": "",
   "ars_caelum.ritual_desc.ritual_cobble": "Converts four nearby water sources and will produce cobblestone on the last source consumed.",
-  "item.ars_caelum.mana_regen_ritual": "",
-  "item.ars_caelum.platform_ritual": "",
-  "item.ars_caelum.ritual_cobble": ""
+  "ars_caelum.ritual_desc.ritual_conjure_plains": "Creates an island of grass and dirt in a circle around the ritual. The island will generate with a radius of 7 blocks. Augmenting the ritual with Source Gems will increase the radius by 1 for each gem. Source must be provided nearby as blocks are generated.",
+  "ars_caelum.ritual_desc.ritual_forestation": "Places grown Oak, Birch, and Spruce trees, and applies bonemeal in a 7x7 (circular) area. Augmenting with a source gem will increase the radius by 1 for each gem.",
+  "ars_caelum.ritual_desc.ritual_mana_regen": "Grants a small amount of mana to all players nearby.",
+  "item.ars_caelum.ritual_cobble": "",
+  "item.ars_caelum.ritual_conjure_plains": "",
+  "item.ars_caelum.ritual_forestation": "",
+  "item.ars_caelum.ritual_mana_regen": ""
 }

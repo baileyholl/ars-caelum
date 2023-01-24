@@ -7,22 +7,26 @@
     {
       "chance": 1.0,
       "count": 1,
-      "item": "minecraft:sand"
+      "item": "minecraft:sand",
+      "maxRange": 1
     },
     {
       "chance": 0.2,
       "count": 1,
-      "item": "minecraft:lapis_lazuli"
+      "item": "minecraft:lapis_lazuli",
+      "maxRange": 1
     },
     {
       "chance": 0.01,
       "count": 1,
-      "item": "minecraft:diamond"
+      "item": "minecraft:diamond",
+      "maxRange": 1
     },
     {
       "chance": 0.02,
       "count": 1,
-      "item": "minecraft:flint"
+      "item": "minecraft:flint",
+      "maxRange": 1
     }
   ],
   "skip_block_place": false

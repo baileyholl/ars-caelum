@@ -1,3 +1,7 @@
-// 1.19.2	2023-01-21T20:23:22.6999391	Recipes
+// 1.19.2	2023-01-22T22:43:43.3532493	Recipes
 a7313ebbba1c83c88c4b36b522ae3444292504be data/ars_caelum/advancements/recipes/ars_nouveau/cobble_ritual.json
+a24b8ef608a25726568e5297467b21d69359e878 data/ars_caelum/advancements/recipes/ars_nouveau/forestation_ritual.json
+32a18c3a6357bcac8e1274f818c8bcca3b372710 data/ars_caelum/advancements/recipes/ars_nouveau/platform_ritual.json
 a1fc7b6a9889ce26169165c8f981f5cc4284a7ff data/ars_caelum/recipes/cobble_ritual.json
+24d6beb7d0ebf79263439ad99ae9adcf8d043247 data/ars_caelum/recipes/forestation_ritual.json
+f9ffcbbc33bf18ce2adf091bd7f0e74cc400dd0d data/ars_caelum/recipes/platform_ritual.json

@@ -1,5 +1,6 @@
 package com.hollingsworth.ars_caelum;
 
+import com.hollingsworth.ars_caelum.network.ACNetwork;
 import com.hollingsworth.ars_caelum.registry.ModRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,7 +37,7 @@ public class ArsCaelum
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        ACNetwork.registerMessages();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

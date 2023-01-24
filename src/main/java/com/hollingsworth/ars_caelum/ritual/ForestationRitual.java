@@ -22,4 +22,14 @@ public class ForestationRitual extends FeaturePlacementRitual {
     public ResourceLocation getRegistryName() {
         return new ResourceLocation(ArsCaelum.MODID, RitualLang.FORESTATION);
     }
+
+    @Override
+    public String getName() {
+        return "Forestation";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Places grown Oak, Birch, and Spruce trees, and applies bonemeal in a 7x7 (circular) area. Augmenting with a source gem will increase the radius by 1 for each gem.";
+    }
 }

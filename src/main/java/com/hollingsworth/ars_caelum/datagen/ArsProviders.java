@@ -49,16 +49,23 @@ public class ArsProviders {
 
         @Override
         public void run(CachedOutput cache) throws IOException {
-            replaceAn.add(new CrushRecipe("stone", Ingredient.of(Tags.Items.STONE))
-                    .withItems(Items.GRAVEL.getDefaultInstance())
-                    .withItems(Items.GOLD_NUGGET.getDefaultInstance(), 0.2f)
-                    .withItems(Items.IRON_NUGGET.getDefaultInstance(), 0.2f));
+            CrushRecipe.CrushOutput goldNug = new CrushRecipe.CrushOutput(Items.GOLD_NUGGET.getDefaultInstance(), 0.2f, 3);
+            CrushRecipe.CrushOutput ironNug = new CrushRecipe.CrushOutput(Items.IRON_NUGGET.getDefaultInstance(), 0.2f, 3);
+            // copper nug
+            CrushRecipe.CrushOutput copperNug = new CrushRecipe.CrushOutput(Items.RAW_COPPER.getDefaultInstance(), 0.2f, 1);
+            // stone recipe
+            CrushRecipe stone = new CrushRecipe("stone", Ingredient.of(Tags.Items.STONE)).withItems(Items.GRAVEL.getDefaultInstance());
+            stone.outputs.add(goldNug);
+            stone.outputs.add(ironNug);
+            stone.outputs.add(copperNug);
 
-            replaceAn.add(new CrushRecipe("cobblestone", Ingredient.of(Tags.Items.COBBLESTONE))
-                    .withItems(Items.GRAVEL.getDefaultInstance())
-                    .withItems(Items.GOLD_NUGGET.getDefaultInstance(), 0.2f)
-                    .withItems(Items.IRON_NUGGET.getDefaultInstance(), 0.2f));
-
+            CrushRecipe cobbleRecipe = new CrushRecipe("cobblestone", Ingredient.of(Tags.Items.COBBLESTONE))
+                    .withItems(Items.GRAVEL.getDefaultInstance());
+            cobbleRecipe.outputs.add(goldNug);
+            cobbleRecipe.outputs.add(ironNug);
+            cobbleRecipe.outputs.add(copperNug);
+            replaceAn.add(cobbleRecipe);
+            replaceAn.add(stone);
             replaceAn.add(new CrushRecipe("gravel", Ingredient.of(Tags.Items.GRAVEL))
                     .withItems(Items.SAND.getDefaultInstance())
                     .withItems(Items.LAPIS_LAZULI.getDefaultInstance(), 0.2f)

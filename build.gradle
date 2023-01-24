@@ -35,10 +35,10 @@ archivesBaseName = 'ars_caelum'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 minecraft {
 
-    mappings channel: 'parchment', version: '2022.08.14-1.19.2'
+    mappings channel: 'parchment', version: '2022.11.27-1.19.2'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -112,12 +112,12 @@ repositories {
         url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
+        url "https://maven.blamejared.com"
+    }
+    maven {
         // location of a maven mirror for JEI files, as a fallback
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
-    }
-    maven {
-        url "https://maven.blamejared.com"
     }
     maven {
         url "https://www.cursemaven.com"

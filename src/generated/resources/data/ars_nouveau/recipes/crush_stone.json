@@ -7,17 +7,26 @@
     {
       "chance": 1.0,
       "count": 1,
-      "item": "minecraft:gravel"
+      "item": "minecraft:gravel",
+      "maxRange": 1
     },
     {
       "chance": 0.2,
       "count": 1,
-      "item": "minecraft:gold_nugget"
+      "item": "minecraft:gold_nugget",
+      "maxRange": 3
     },
     {
       "chance": 0.2,
       "count": 1,
-      "item": "minecraft:iron_nugget"
+      "item": "minecraft:iron_nugget",
+      "maxRange": 3
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "item": "minecraft:raw_copper",
+      "maxRange": 1
     }
   ],
   "skip_block_place": false
