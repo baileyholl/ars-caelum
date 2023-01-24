@@ -1,9 +1,6 @@
 package com.hollingsworth.ars_caelum;
 
-import com.hollingsworth.ars_caelum.ritual.CobbleRitual;
-import com.hollingsworth.ars_caelum.ritual.ForestationRitual;
-import com.hollingsworth.ars_caelum.ritual.ManaRegenRitual;
-import com.hollingsworth.ars_caelum.ritual.ConjurePlainsRitual;
+import com.hollingsworth.ars_caelum.ritual.*;
 import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
 import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
 
@@ -19,6 +16,7 @@ public class ArsNouveauRegistry {
         ArsNouveauAPI.getInstance().registerRitual(new ConjurePlainsRitual());
         ArsNouveauAPI.getInstance().registerRitual(new CobbleRitual());
         ArsNouveauAPI.getInstance().registerRitual(new ForestationRitual());
+        ArsNouveauAPI.getInstance().registerRitual(new StructureRitual());
     }
 
     public static void register(AbstractSpellPart spellPart){
