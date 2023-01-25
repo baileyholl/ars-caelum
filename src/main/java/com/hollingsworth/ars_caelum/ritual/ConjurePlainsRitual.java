@@ -2,32 +2,19 @@ package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
-import com.hollingsworth.ars_caelum.network.ACNetwork;
-import com.hollingsworth.ars_caelum.network.ChangeBiomePacket;
 import com.hollingsworth.ars_caelum.util.ManhattenTracker;
+import com.hollingsworth.ars_caelum.util.RitualUtil;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.api.util.BlockUtil;
 import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.QuartPos;
-import net.minecraft.core.Registry;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.chunk.LevelChunk;
-import net.minecraft.world.level.chunk.LevelChunkSection;
-import net.minecraft.world.level.chunk.PalettedContainer;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.network.PacketDistributor;
 
 public class ConjurePlainsRitual extends AbstractRitual {
 
@@ -65,7 +52,7 @@ public class ConjurePlainsRitual extends AbstractRitual {
                 } else {
                     getWorld().setBlock(nextPos, Blocks.DIRT.defaultBlockState(), 2);
                 }
-                changeBiome(getWorld(), nextPos, Biomes.PLAINS);
+                RitualUtil.changeBiome(getWorld(), nextPos, Biomes.PLAINS);
                 getWorld().playSound(null, nextPos, Blocks.DIRT.defaultBlockState().getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0f, 1.0f);
                 blocksPlaced++;
                 if (blocksPlaced >= 5){
@@ -75,42 +62,6 @@ public class ConjurePlainsRitual extends AbstractRitual {
                 return;
             }
         }
-    }
-
-    public void changeBiome(Level level, BlockPos pos, ResourceKey<Biome> target) {
-        Holder<Biome> biome = level.registryAccess().registryOrThrow(Registry.BIOME_REGISTRY).getHolderOrThrow(target);
-//        int range = TFConfig.COMMON_CONFIG.MAGIC_TREES.transformationRange.get();
-        BlockPos dPos = pos;
-
-        if (level.getBiome(dPos).is(target))
-            return;
-
-        int minY = QuartPos.fromBlock(level.getMinBuildHeight());
-        int maxY = minY + QuartPos.fromBlock(level.getHeight()) - 1;
-
-        int x = QuartPos.fromBlock(dPos.getX());
-        int z = QuartPos.fromBlock(dPos.getZ());
-
-        LevelChunk chunkAt = level.getChunk(dPos.getX() >> 4, dPos.getZ() >> 4);
-        for (LevelChunkSection section : chunkAt.getSections()) {
-            for (int sy = 0; sy < 16; sy += 4) {
-                int y = Mth.clamp(QuartPos.fromBlock(section.bottomBlockY() + sy), minY, maxY);
-                if (section.getBiomes().get(x & 3, y & 3, z & 3).is(target))
-                    continue;
-                if (section.getBiomes() instanceof PalettedContainer<Holder<Biome>> container)
-                    container.set(x & 3, y & 3, z & 3, biome);
-            }
-        }
-
-        if (level instanceof ServerLevel server) {
-            if (!chunkAt.isUnsaved()) chunkAt.setUnsaved(true);
-            sendChangedBiome(chunkAt, dPos, target);
-        }
-    }
-
-    private void sendChangedBiome(LevelChunk chunk, BlockPos pos, ResourceKey<Biome> biome) {
-        ChangeBiomePacket message = new ChangeBiomePacket(pos, biome);
-        ACNetwork.INSTANCE.send(PacketDistributor.TRACKING_CHUNK.with(() -> chunk), message);
     }
 
     @Override
@@ -144,6 +95,7 @@ public class ConjurePlainsRitual extends AbstractRitual {
         if(tag.contains("tracker")){
             tracker = new ManhattenTracker(tag.getCompound("tracker"));
         }
+        radius = tag.getInt("radius");
     }
 
     @Override
@@ -152,5 +104,6 @@ public class ConjurePlainsRitual extends AbstractRitual {
         if(tracker != null){
             tag.put("tracker", tracker.serialize(new CompoundTag()));
         }
+        tag.putInt("radius", radius);
     }
 }

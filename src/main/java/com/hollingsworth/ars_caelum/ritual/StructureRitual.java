@@ -1,9 +1,12 @@
 package com.hollingsworth.ars_caelum.ritual;
 
+import com.hollingsworth.ars_caelum.util.RitualUtil;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
@@ -17,12 +20,14 @@ public abstract class StructureRitual extends AbstractRitual {
     int index;
     int sourceRequired;
     boolean hasConsumed;
+    ResourceKey<Biome> biome;
 
-    public StructureRitual(ResourceLocation structure, BlockPos offset, int sourceRequired){
+    public StructureRitual(ResourceLocation structure, BlockPos offset, int sourceRequired, ResourceKey<Biome> biome){
         this.structure = structure;
         this.offset = offset;
         this.sourceRequired = sourceRequired;
         this.hasConsumed = sourceRequired == 0;
+        this.biome = biome;
     }
 
     @Override
@@ -30,9 +35,10 @@ public abstract class StructureRitual extends AbstractRitual {
         super.onStart();
         if(getWorld().isClientSide)
             return;
-        if(!hasConsumed){
-            setNeedsSource(true);
-        }
+        setup();
+    }
+
+    public void setup(){
         StructureTemplateManager manager = getWorld().getServer().getStructureManager();
         StructureTemplate structureTemplate = manager.getOrCreate(structure);
         List<StructureTemplate.StructureBlockInfo> infoList = structureTemplate.palettes.get(0).blocks();
@@ -44,6 +50,10 @@ public abstract class StructureRitual extends AbstractRitual {
     protected void tick() {
         if(getWorld().isClientSide)
             return;
+        if(!hasConsumed){
+            setNeedsSource(true);
+            return;
+        }
         int placeCount = 0;
         while(placeCount < 5){
             if (index >= blocks.size()) {
@@ -55,6 +65,9 @@ public abstract class StructureRitual extends AbstractRitual {
             if (getWorld().getBlockState(translatedPos).getMaterial().isReplaceable()) {
                 getWorld().setBlock(translatedPos, blockInfo.state, 2);
                 placeCount++;
+                if(biome != null){
+                    RitualUtil.changeBiome(getWorld(), translatedPos, biome);
+                }
             }
             index++;
         }
@@ -65,7 +78,7 @@ public abstract class StructureRitual extends AbstractRitual {
         super.read(tag);
         index = tag.getInt("index");
         hasConsumed = tag.getBoolean("hasConsumed");
-
+        setup();
     }
 
     @Override

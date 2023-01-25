@@ -6,7 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class BlazingIslandRitual extends StructureRitual{
     public BlazingIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "blazing"), new BlockPos(-13, -5, -13));
+        super(new ResourceLocation(ArsCaelum.MODID, "blazing"), new BlockPos(-13, -5, -13), 10000, null);
     }
 
     @Override
@@ -17,5 +17,10 @@ public class BlazingIslandRitual extends StructureRitual{
     @Override
     public String getName() {
         return "Conjure Island: Blazing";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Creates an island of Blazing Archwoods and lava. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
     }
 }
