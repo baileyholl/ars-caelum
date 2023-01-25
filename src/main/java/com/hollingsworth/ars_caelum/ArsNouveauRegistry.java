@@ -12,11 +12,12 @@ public class ArsNouveauRegistry {
     public static List<AbstractSpellPart> registeredSpells = new ArrayList<>();
 
     public static void registerGlyphs(){
-        ArsNouveauAPI.getInstance().registerRitual(new ManaRegenRitual());
-        ArsNouveauAPI.getInstance().registerRitual(new ConjurePlainsRitual());
-        ArsNouveauAPI.getInstance().registerRitual(new CobbleRitual());
-        ArsNouveauAPI.getInstance().registerRitual(new ForestationRitual());
-        ArsNouveauAPI.getInstance().registerRitual(new StructureRitual());
+        ArsNouveauAPI api = ArsNouveauAPI.getInstance();;
+        api.registerRitual(new ManaRegenRitual());
+        api.registerRitual(new ConjurePlainsRitual());
+        api.registerRitual(new CobbleRitual());
+        api.registerRitual(new ForestationRitual());
+        api.registerRitual(new BlazingIslandRitual());
     }
 
     public static void register(AbstractSpellPart spellPart){
