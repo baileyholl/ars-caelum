@@ -39,6 +39,8 @@ public abstract class StructureRitual extends AbstractRitual {
     }
 
     public void setup(){
+        if(getWorld().isClientSide)
+            return;
         StructureTemplateManager manager = getWorld().getServer().getStructureManager();
         StructureTemplate structureTemplate = manager.getOrCreate(structure);
         List<StructureTemplate.StructureBlockInfo> infoList = structureTemplate.palettes.get(0).blocks();
@@ -70,6 +72,14 @@ public abstract class StructureRitual extends AbstractRitual {
                 }
             }
             index++;
+        }
+    }
+
+    @Override
+    public void setNeedsSource(boolean needMana) {
+        super.setNeedsSource(needMana);
+        if(!needMana){
+            hasConsumed = true;
         }
     }
 

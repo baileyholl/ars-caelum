@@ -19,6 +19,7 @@ public class ArsNouveauRegistry {
         api.registerRitual(new ForestationRitual());
         api.registerRitual(new BlazingIslandRitual());
         api.registerRitual(new CascadingIslandRitual());
+        api.registerRitual(new FlourishingIslandRitual());
     }
 
     public static void register(AbstractSpellPart spellPart){
