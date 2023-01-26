@@ -4,6 +4,7 @@ import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.api.util.BlockUtil;
 import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 
@@ -23,21 +24,30 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
 
     public List<IPlaceableFeature> features = new ArrayList<>();
 
+    public BlockPos lowerOffset = BlockPos.ZERO;
+    public BlockPos upperOffset = BlockPos.ZERO;
+
     abstract void addFeatures(List<IPlaceableFeature> features);
 
     @Override
     public void onStart() {
         super.onStart();
         for(ItemStack i : getConsumedItems()){
-            checkRadius += i.getCount();
+            if(i.is(ItemTagProvider.SOURCE_GEM_TAG)) {
+                checkRadius += i.getCount();
+            }
         }
+        setup();
+    }
 
+    public void setup(){
         addFeatures(features);
         for(IPlaceableFeature feature : features){
             featureMap.put(feature.getFeatureName(), new ArrayList<>());
         }
+        targetPositions = new ArrayList<>();
         BlockPos pos = getPos();
-        for(BlockPos nextPos : BlockPos.betweenClosed(getPos().offset(-checkRadius, 0, -checkRadius), getPos().offset(checkRadius, 0, checkRadius))){
+        for(BlockPos nextPos : BlockPos.betweenClosed(getPos().offset(-checkRadius, 0, -checkRadius).offset(lowerOffset), getPos().offset(checkRadius, 0, checkRadius).offset(upperOffset))){
             double x = nextPos.getX() + 0.5;
             double y = nextPos.getY() + 0.5;
             double z = nextPos.getZ() + 0.5;
@@ -49,9 +59,10 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
         Collections.shuffle(targetPositions);
     }
 
+
     @Override
     protected void tick() {
-        if(getWorld().isClientSide || getWorld().getGameTime() % 20 != 0){
+        if(getWorld().isClientSide){
             return;
         }
 
@@ -90,5 +101,22 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
     @Override
     public boolean canConsumeItem(ItemStack stack) {
         return stack.is(ItemTagProvider.SOURCE_GEM_TAG);
+    }
+
+    @Override
+    public void read(CompoundTag tag) {
+        super.read(tag);
+        featureIndex = tag.getInt("featureIndex");
+        positionIndex = tag.getInt("positionIndex");
+        checkRadius = tag.getInt("checkRadius");
+        setup();
+    }
+
+    @Override
+    public void write(CompoundTag tag) {
+        super.write(tag);
+        tag.putInt("featureIndex", featureIndex);
+        tag.putInt("positionIndex", positionIndex);
+        tag.putInt("checkRadius", checkRadius);
     }
 }

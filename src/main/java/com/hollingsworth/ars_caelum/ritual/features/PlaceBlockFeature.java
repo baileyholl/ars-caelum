@@ -16,14 +16,14 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.function.Supplier;
 
-public class FlowerFeature implements IPlaceableFeature {
+public class PlaceBlockFeature implements IPlaceableFeature {
 
     public double distance;
-    public Supplier<BlockState> flower;
+    public Supplier<BlockState> block;
     public double chance;
-    public FlowerFeature(double distance, double chance, Supplier<BlockState> flower){
+    public PlaceBlockFeature(double distance, double chance, Supplier<BlockState> block){
         this.distance = distance;
-        this.flower = flower;
+        this.block = block;
         this.chance = chance;
     }
 
@@ -34,7 +34,7 @@ public class FlowerFeature implements IPlaceableFeature {
 
     @Override
     public boolean onPlace(Level level, BlockPos pos, FeaturePlacementRitual placementRitual, RitualBrazierTile brazierTile) {
-        BlockState state = flower.get();
+        BlockState state = block.get();
         if(level.random.nextFloat() < chance && state.canSurvive(level, pos)){
             BlockItem stack = (BlockItem) state.getBlock().asItem();
             stack.place(new BlockPlaceContext(level, null, InteractionHand.MAIN_HAND, new ItemStack(stack), new BlockHitResult(new Vec3(pos.getX(), pos.getY(), pos.getZ()), Direction.DOWN, pos, false)));
@@ -45,6 +45,6 @@ public class FlowerFeature implements IPlaceableFeature {
 
     @Override
     public String getFeatureName() {
-        return "flower";
+        return "block";
     }
 }

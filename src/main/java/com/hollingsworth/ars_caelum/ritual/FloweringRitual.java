@@ -3,7 +3,7 @@ package com.hollingsworth.ars_caelum.ritual;
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.ars_caelum.ritual.features.BonemealFeature;
-import com.hollingsworth.ars_caelum.ritual.features.FlowerFeature;
+import com.hollingsworth.ars_caelum.ritual.features.PlaceBlockFeature;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class FloweringRitual extends FeaturePlacementRitual {
 
-    List<Block> flowers;
+    public List<Block> flowers;
 
     public FloweringRitual() {
         flowers = new ArrayList<>();
@@ -24,8 +24,8 @@ public class FloweringRitual extends FeaturePlacementRitual {
 
     @Override
     void addFeatures(List<IPlaceableFeature> features) {
-        features.add(new FlowerFeature(1.5, 0.8, () -> flowers.get(getWorld().random.nextInt(flowers.size())).defaultBlockState()));
-        features.add(new BonemealFeature(8));
+        features.add(new PlaceBlockFeature(1.5, 0.8, () -> flowers.get(getWorld().random.nextInt(flowers.size())).defaultBlockState()));
+        features.add(new BonemealFeature(5, 0.8));
     }
 
     @Override
