@@ -5,13 +5,13 @@ import com.hollingsworth.ars_caelum.lib.RitualLang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 
-public class FlourishingIslandRitual extends StructureRitual{
-    public FlourishingIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "flourishing"),  new BlockPos(-13, -5, -13), 10000, null);
+public class VexingIslandRitual extends StructureRitual{
+    public VexingIslandRitual() {
+        super(new ResourceLocation(ArsCaelum.MODID, "vexing"),  new BlockPos(-16, -5, -13), 10000, null);
     }
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.FLOURISHING);
+        return new ResourceLocation(ArsCaelum.MODID, RitualLang.VEXING);
     }
 }

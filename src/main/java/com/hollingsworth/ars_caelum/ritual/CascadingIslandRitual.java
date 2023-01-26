@@ -1,6 +1,7 @@
 package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
+import com.hollingsworth.ars_caelum.lib.RitualLang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
@@ -12,7 +13,7 @@ public class CascadingIslandRitual extends StructureRitual{
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, "cascading_island");
+        return new ResourceLocation(ArsCaelum.MODID, RitualLang.CASCADING);
     }
 
     @Override

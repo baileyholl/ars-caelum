@@ -21,19 +21,24 @@ public class ConjurePlainsRitual extends AbstractRitual {
     ManhattenTracker tracker;
     int radius = 0;
     int blocksPlaced;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if(getWorld().isClientSide){
+            return;
+        }
+        radius = 7;
+        for(ItemStack i : getConsumedItems()){
+            radius += i.getCount();
+        }
+        tracker = new ManhattenTracker(getPos().below(3), radius, 2, radius);
+    }
+
     @Override
     protected void tick() {
         if(getWorld().isClientSide){
             return;
-        }
-        if(radius == 0){
-            radius = 7;
-            for(ItemStack i : getConsumedItems()){
-                radius += i.getCount();
-            }
-        }
-        if(tracker == null){
-            tracker = new ManhattenTracker(getPos().below(3), radius, 2, radius);
         }
         for(int i = 0; i < radius; i++) {
             BlockPos pos = getPos();
@@ -71,7 +76,7 @@ public class ConjurePlainsRitual extends AbstractRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.PLATFORM);
+        return new ResourceLocation(ArsCaelum.MODID, RitualLang.PLAINS);
     }
 
     @Override

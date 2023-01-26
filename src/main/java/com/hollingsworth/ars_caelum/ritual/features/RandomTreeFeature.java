@@ -15,10 +15,11 @@ public class RandomTreeFeature implements IPlaceableFeature {
 
     List<BlockState> treeStates;
     double distance;
-
-    public RandomTreeFeature(List<BlockState> treeStates, double distance){
+    double chance;
+    public RandomTreeFeature(List<BlockState> treeStates, double distance, double chance){
         this.treeStates = treeStates;
         this.distance = distance;
+        this.chance = chance;
     }
 
     @Override

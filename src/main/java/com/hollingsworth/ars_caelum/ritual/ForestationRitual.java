@@ -14,7 +14,7 @@ public class ForestationRitual extends FeaturePlacementRitual {
 
     @Override
     void addFeatures(List<IPlaceableFeature> features) {
-        features.add(new RandomTreeFeature(List.of(Blocks.OAK_SAPLING.defaultBlockState(), Blocks.BIRCH_SAPLING.defaultBlockState(), Blocks.SPRUCE_SAPLING.defaultBlockState()), 5));
+        features.add(new RandomTreeFeature(List.of(Blocks.OAK_SAPLING.defaultBlockState(), Blocks.BIRCH_SAPLING.defaultBlockState(), Blocks.SPRUCE_SAPLING.defaultBlockState()), 5, 0.8));
         features.add(new BonemealFeature(8));
     }
 

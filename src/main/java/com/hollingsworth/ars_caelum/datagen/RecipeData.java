@@ -21,7 +21,7 @@ public class RecipeData extends com.hollingsworth.arsnouveau.common.datagen.Reci
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         shapelessBuilder(getAddonRitual(RitualLang.COBBLE)).requires(BlockRegistry.CASCADING_LOG).requires(BlockRegistry.FROSTAYA_POD).save(consumer, new ResourceLocation(ArsCaelum.MODID, "cobble_ritual"));
 
-        shapelessBuilder(getAddonRitual(RitualLang.PLATFORM)).requires(BlockRegistry.FLOURISHING_LOG).requires(Blocks.GRASS).save(consumer, new ResourceLocation(ArsCaelum.MODID, "platform_ritual"));
+        shapelessBuilder(getAddonRitual(RitualLang.PLAINS)).requires(BlockRegistry.FLOURISHING_LOG).requires(Blocks.GRASS).save(consumer, new ResourceLocation(ArsCaelum.MODID, "platform_ritual"));
         shapelessBuilder(getAddonRitual(RitualLang.FORESTATION)).requires(BlockRegistry.FLOURISHING_LOG).save(consumer, new ResourceLocation(ArsCaelum.MODID, "forestation_ritual"));
     }
 

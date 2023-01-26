@@ -2,7 +2,9 @@ package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.api.util.BlockUtil;
+import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.*;
@@ -26,6 +28,10 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
     @Override
     public void onStart() {
         super.onStart();
+        for(ItemStack i : getConsumedItems()){
+            checkRadius += i.getCount();
+        }
+
         addFeatures(features);
         for(IPlaceableFeature feature : features){
             featureMap.put(feature.getFeatureName(), new ArrayList<>());
@@ -48,7 +54,8 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
         if(getWorld().isClientSide || getWorld().getGameTime() % 20 != 0){
             return;
         }
-        for(int i = 0; i < 20; i++) {
+
+        while(true){
             if (positionIndex >= targetPositions.size()) {
                 featureIndex++;
                 Collections.shuffle(targetPositions);
@@ -78,5 +85,10 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
             }
         }
         return true;
+    }
+
+    @Override
+    public boolean canConsumeItem(ItemStack stack) {
+        return stack.is(ItemTagProvider.SOURCE_GEM_TAG);
     }
 }
