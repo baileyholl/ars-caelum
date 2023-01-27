@@ -21,6 +21,7 @@ public class Setup {
         gen.addProvider(event.includeServer(), new ArsProviders.PatchouliProvider(gen));
         gen.addProvider(event.includeClient(), new LangGen(gen, ArsCaelum.MODID, "en_us"));
         gen.addProvider(event.includeServer(), new RecipeData(gen));
+        gen.addProvider(event.includeClient(), new ItemModelGen(gen, ArsCaelum.MODID, event.getExistingFileHelper()));
     }
 
 }

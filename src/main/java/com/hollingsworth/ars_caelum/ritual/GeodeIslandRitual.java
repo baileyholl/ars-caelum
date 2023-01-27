@@ -14,4 +14,14 @@ public class GeodeIslandRitual extends StructureRitual{
     public ResourceLocation getRegistryName() {
         return new ResourceLocation(ArsCaelum.MODID, RitualLang.GEODE);
     }
+
+    @Override
+    public String getName() {
+        return "Conjure Island: Amethyst Geode";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Creates an island in the shape of an Amethyst Geode. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
+    }
 }

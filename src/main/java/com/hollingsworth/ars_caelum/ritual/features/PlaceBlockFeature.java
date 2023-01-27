@@ -35,7 +35,7 @@ public class PlaceBlockFeature implements IPlaceableFeature {
     @Override
     public boolean onPlace(Level level, BlockPos pos, FeaturePlacementRitual placementRitual, RitualBrazierTile brazierTile) {
         BlockState state = block.get();
-        if(level.random.nextFloat() < chance && state.canSurvive(level, pos)){
+        if(level.random.nextFloat() < chance && !level.getBlockState(pos.below()).isAir() && state.canSurvive(level, pos)){
             BlockItem stack = (BlockItem) state.getBlock().asItem();
             stack.place(new BlockPlaceContext(level, null, InteractionHand.MAIN_HAND, new ItemStack(stack), new BlockHitResult(new Vec3(pos.getX(), pos.getY(), pos.getZ()), Direction.DOWN, pos, false)));
             return true;

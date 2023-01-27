@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ars_caelum:item/ritual_conjure_island_blazing"
+  }
+}

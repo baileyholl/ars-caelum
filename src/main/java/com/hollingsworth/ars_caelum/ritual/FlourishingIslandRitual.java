@@ -14,4 +14,14 @@ public class FlourishingIslandRitual extends StructureRitual{
     public ResourceLocation getRegistryName() {
         return new ResourceLocation(ArsCaelum.MODID, RitualLang.FLOURISHING);
     }
+
+    @Override
+    public String getName() {
+        return "Conjure Island: Flourishing";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Creates an island of Flourishing Archwoods, sugarcane, moss, and bamboo. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
+    }
 }

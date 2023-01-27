@@ -1,13 +1,10 @@
 package com.hollingsworth.ars_caelum.registry;
 
-import com.hollingsworth.ars_caelum.item.ExampleCosmetic;
-import com.hollingsworth.arsnouveau.ArsNouveau;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 import static com.hollingsworth.ars_caelum.ArsCaelum.MODID;
 
@@ -22,10 +19,10 @@ public class ModRegistry {
         ITEMS.register(bus);
     }
 
-    public static final RegistryObject<Item> EXAMPLE;
+//    public static final RegistryObject<Item> EXAMPLE;
 
     static {
-        EXAMPLE = ITEMS.register("star_hat", () -> new ExampleCosmetic(new Item.Properties().tab(ArsNouveau.itemGroup)));
+//        EXAMPLE = ITEMS.register("star_hat", () -> new ExampleCosmetic(new Item.Properties().tab(ArsNouveau.itemGroup)));
     }
 
 }

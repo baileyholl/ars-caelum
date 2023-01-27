@@ -32,4 +32,14 @@ public class FloweringRitual extends FeaturePlacementRitual {
     public ResourceLocation getRegistryName() {
         return new ResourceLocation(ArsCaelum.MODID, RitualLang.FLOWERING);
     }
+
+    @Override
+    public String getName() {
+        return "Flowering";
+    }
+
+    @Override
+    public String getLangDescription() {
+        return "Populates the nearby area with flowers and grass. Augmenting with a source gem will increase the radius by 1 for each gem.";
+    }
 }

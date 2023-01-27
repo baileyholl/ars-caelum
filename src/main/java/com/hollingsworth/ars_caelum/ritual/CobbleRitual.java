@@ -54,7 +54,7 @@ public class CobbleRitual extends AbstractRitual {
 
     @Override
     public String getName() {
-        return "Cobble";
+        return "Sedimentation";
     }
 
     @Override
