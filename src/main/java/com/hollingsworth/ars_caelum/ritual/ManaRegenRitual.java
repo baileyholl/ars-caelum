@@ -30,7 +30,7 @@ public class ManaRegenRitual extends AbstractRitual {
     }
 
     @Override
-    public String getName() {
+    public String getLangName() {
         return "Mana Regeneration";
     }
 

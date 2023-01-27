@@ -16,7 +16,7 @@ public class FlourishingIslandRitual extends StructureRitual{
     }
 
     @Override
-    public String getName() {
+    public String getLangName() {
         return "Conjure Island: Flourishing";
     }
 

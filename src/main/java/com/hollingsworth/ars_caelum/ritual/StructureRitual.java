@@ -8,6 +8,8 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
@@ -67,6 +69,14 @@ public abstract class StructureRitual extends AbstractRitual {
             BlockPos translatedPos = getPos().offset(blockInfo.pos.getX(), blockInfo.pos.getY(), blockInfo.pos.getZ()).offset(offset);
             if (getWorld().getBlockState(translatedPos).getMaterial().isReplaceable()) {
                 getWorld().setBlock(translatedPos, blockInfo.state, 2);
+                BlockEntity blockentity1 = getWorld().getBlockEntity(translatedPos);
+                if (blockentity1 != null) {
+                    if (blockentity1 instanceof RandomizableContainerBlockEntity) {
+                        blockInfo.nbt.putLong("LootTableSeed", getWorld().random.nextLong());
+                    }
+
+                    blockentity1.load(blockInfo.nbt);
+                }
                 getWorld().playSound(null, translatedPos, blockInfo.state.getSoundType().getPlaceSound(), SoundSource.BLOCKS, 1.0F, 1.0F);
                 placeCount++;
                 if(biome != null){

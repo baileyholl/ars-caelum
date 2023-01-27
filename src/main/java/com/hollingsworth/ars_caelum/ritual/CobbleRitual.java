@@ -53,7 +53,7 @@ public class CobbleRitual extends AbstractRitual {
 
 
     @Override
-    public String getName() {
+    public String getLangName() {
         return "Sedimentation";
     }
 

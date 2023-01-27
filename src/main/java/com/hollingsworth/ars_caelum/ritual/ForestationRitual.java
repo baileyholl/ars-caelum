@@ -54,7 +54,7 @@ public class ForestationRitual extends FeaturePlacementRitual {
     }
 
     @Override
-    public String getName() {
+    public String getLangName() {
         return "Forestation";
     }
 

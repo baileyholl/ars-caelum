@@ -85,7 +85,7 @@ public class ConjurePlainsRitual extends AbstractRitual {
     }
 
     @Override
-    public String getName() {
+    public String getLangName() {
         return "Conjure Island: Plains";
     }
 

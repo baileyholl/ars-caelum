@@ -16,7 +16,7 @@ public class GeodeIslandRitual extends StructureRitual{
     }
 
     @Override
-    public String getName() {
+    public String getLangName() {
         return "Conjure Island: Amethyst Geode";
     }
 

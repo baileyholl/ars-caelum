@@ -34,7 +34,7 @@ public class FloweringRitual extends FeaturePlacementRitual {
     }
 
     @Override
-    public String getName() {
+    public String getLangName() {
         return "Flowering";
     }
 
