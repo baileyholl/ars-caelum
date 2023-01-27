@@ -10,6 +10,7 @@
   "ars_caelum.ritual_desc.ritual_forestation": "Places grown Oak and Birch trees, and applies bonemeal in a 7x7 (circular) area. Augmenting with a source gem will increase the radius by 1 for each gem. Augmenting with a Brown Mushroom will convert the area to Podzol and spawn taiga resources. Augmenting with Glow Berries will spawn jungle resources.",
   "ars_caelum.ritual_desc.ritual_mana_regeneration": "Grants a small amount of mana to all players nearby.",
   "ars_caelum.ritual_desc.ritual_sedimentation": "Converts four nearby water sources and will produce cobblestone on the last source consumed.",
+  "ars_caelum.tablet_of": "Tablet of %s",
   "item.ars_caelum.ritual_conjure_island_blazing": "Conjure Island: Blazing",
   "item.ars_caelum.ritual_conjure_island_cascading": "Conjure Island: Cascading",
   "item.ars_caelum.ritual_conjure_island_flourishing": "Conjure Island: Flourishing",

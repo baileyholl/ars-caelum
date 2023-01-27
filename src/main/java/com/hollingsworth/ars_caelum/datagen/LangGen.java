@@ -27,5 +27,7 @@ public class LangGen extends LanguageProvider {
             add("item.ars_caelum." + i.ritual.getRegistryName().getPath(), i.ritual.getLangName());
         }
 
+        add( "ars_caelum.tablet_of", "Tablet of %s");
+
     }
 }
