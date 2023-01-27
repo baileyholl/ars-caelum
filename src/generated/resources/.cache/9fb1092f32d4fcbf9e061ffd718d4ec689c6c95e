@@ -1,7 +1,8 @@
-// 1.19.2	2023-01-26T18:49:32.3029447	Recipes
+// 1.19.2	2023-01-26T20:39:20.3368076	Recipes
 d6a8edcf1074326f6f0351c5dea836f75f96dacb data/ars_caelum/advancements/recipes/ars_nouveau/blazing_ritual.json
 af90082dca99fbe264c95728db0641681766298a data/ars_caelum/advancements/recipes/ars_nouveau/cascade_ritual.json
 a7313ebbba1c83c88c4b36b522ae3444292504be data/ars_caelum/advancements/recipes/ars_nouveau/cobble_ritual.json
+8591d017657ee681e982e6b652cc4e19d83d0360 data/ars_caelum/advancements/recipes/ars_nouveau/end_portal_ritual.json
 e2989c3078ede4f84b7c15d3e851f4db103062eb data/ars_caelum/advancements/recipes/ars_nouveau/flourishing_ritual.json
 153daccc01dce9bab9b6388ff552873095e14cc9 data/ars_caelum/advancements/recipes/ars_nouveau/flowering_ritual.json
 a24b8ef608a25726568e5297467b21d69359e878 data/ars_caelum/advancements/recipes/ars_nouveau/forestation_ritual.json
@@ -11,6 +12,7 @@ ed9f93403c1fc47cb1a7fab55ea747a7de3aa1e7 data/ars_caelum/advancements/recipes/ar
 db5685aa7dee21e9959a35a15602ce89f9c234fe data/ars_caelum/recipes/blazing_ritual.json
 c152d208c5e9ecad20ca51ea87c793a6adbd0f91 data/ars_caelum/recipes/cascade_ritual.json
 9cf82d73c8961950eb99df3fc93c3443979460f2 data/ars_caelum/recipes/cobble_ritual.json
+a44ab7b78e025da8b9959cb6b80a979c94025e9d data/ars_caelum/recipes/end_portal_ritual.json
 7df50bfb78240bb4d2f04e6aee95590995840924 data/ars_caelum/recipes/flourishing_ritual.json
 a5592ea1282fc841071f302c7b8b4d091721e943 data/ars_caelum/recipes/flowering_ritual.json
 037565ec216b212433a23702ab3019dcebce4795 data/ars_caelum/recipes/forestation_ritual.json

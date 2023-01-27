@@ -35,6 +35,7 @@ public class RecipeData extends com.hollingsworth.arsnouveau.common.datagen.Reci
         shapelessBuilder(getAddonRitual(RitualLang.FLOWERING)).requires(BlockRegistry.FLOURISHING_LOG).requires(Items.POPPY, 3).requires(Items.DANDELION, 3).requires(ItemsRegistry.EARTH_ESSENCE).save(consumer, new ResourceLocation(ArsCaelum.MODID, "flowering_ritual"));
         shapelessBuilder(getAddonRitual(RitualLang.MANA_REGEN)).requires(BlockRegistry.VEXING_LOG).requires(ItemsRegistry.ABJURATION_ESSENCE)
                 .requires(Ingredient.of(Tags.Items.GEMS_DIAMOND), 3).requires(ItemTagProvider.SOURCE_GEM_BLOCK_TAG).requires(Items.BLAZE_ROD).save(consumer, new ResourceLocation(ArsCaelum.MODID, "mana_regen_ritual"));
+        shapelessBuilder(getAddonRitual(RitualLang.END_PORTAL)).requires(BlockRegistry.VEXING_LOG).requires(Items.ENDER_EYE, 8).save(consumer, new ResourceLocation(ArsCaelum.MODID, "end_portal_ritual"));
     }
 
     public RitualTablet getAddonRitual(String name) {
