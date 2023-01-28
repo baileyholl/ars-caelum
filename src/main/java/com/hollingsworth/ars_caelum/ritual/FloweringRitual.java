@@ -6,6 +6,8 @@ import com.hollingsworth.ars_caelum.ritual.features.BonemealFeature;
 import com.hollingsworth.ars_caelum.ritual.features.PlaceBlockFeature;
 import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
@@ -25,8 +27,20 @@ public class FloweringRitual extends FeaturePlacementRitual {
 
     @Override
     void addFeatures(List<IPlaceableFeature> features) {
-        features.add(new PlaceBlockFeature(1.5, 0.8, () -> flowers.get(getWorld().random.nextInt(flowers.size())).defaultBlockState()));
-        features.add(new BonemealFeature(5, 0.8));
+        boolean isDesert = getConsumedItems().stream().anyMatch(i -> i.is(ItemTags.SAND));
+        if(!isDesert) {
+            features.add(new PlaceBlockFeature(1.5, 0.8, () -> flowers.get(getWorld().random.nextInt(flowers.size())).defaultBlockState()));
+            features.add(new BonemealFeature(5, 0.8));
+        }else{
+            features.add(new PlaceBlockFeature(3, 0.04, Blocks.CACTUS::defaultBlockState));
+            features.add(new PlaceBlockFeature(1.5, 0.1, Blocks.DEAD_BUSH::defaultBlockState));
+        }
+    }
+
+    @Override
+    public boolean canConsumeItem(ItemStack stack) {
+        boolean isDesert = getConsumedItems().stream().anyMatch(i -> i.is(ItemTags.SAND));
+        return super.canConsumeItem(stack) || (!isDesert && stack.is(ItemTags.SAND));
     }
 
     @Override
@@ -41,7 +55,7 @@ public class FloweringRitual extends FeaturePlacementRitual {
 
     @Override
     public String getLangDescription() {
-        return "Populates the nearby area with flowers and grass. Augmenting with a source gem will increase the radius by 1 for each gem.";
+        return "Populates the nearby area with flowers and grass. Augmenting with a source gem will increase the radius by 1 for each gem. Augmenting with sand will replace flowers with Cactus and Dead Bushes.";
     }
 
     @Override

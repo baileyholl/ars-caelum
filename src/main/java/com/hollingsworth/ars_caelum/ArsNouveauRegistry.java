@@ -25,6 +25,7 @@ public class ArsNouveauRegistry {
         api.registerRitual(new FloweringRitual());
         api.registerRitual(new EndRitual());
         api.registerRitual(new StarterIslandRitual());
+        api.registerRitual(new ConjureDesertRitual());
     }
 
     public static void register(AbstractSpellPart spellPart){

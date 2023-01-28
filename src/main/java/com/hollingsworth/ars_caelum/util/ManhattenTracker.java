@@ -1,9 +1,10 @@
 package com.hollingsworth.ars_caelum.util;
 
+import com.hollingsworth.ars_caelum.ritual.features.IBlockPosProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 
-public class ManhattenTracker {
+public class ManhattenTracker implements IBlockPosProvider {
     public int i;
     public int j;
     public int k;

@@ -1,0 +1,15 @@
+{
+  "category": "ars_nouveau:rituals",
+  "icon": "ars_caelum:ritual_conjure_island_vexing",
+  "name": "item.ars_caelum.ritual_conjure_island_vexing",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "ars_caelum.ritual_desc.ritual_conjure_island_vexing"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "ars_caelum:ritual_conjure_island_vexing"
+    }
+  ]
+}

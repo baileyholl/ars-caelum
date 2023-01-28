@@ -13,6 +13,8 @@ public class RitualLang {
     public static String FLOWERING = prependRitual("flowering");
     public static String END_PORTAL = prependRitual("conjure_island_end_portal");
     public static String STARTER = prependRitual("conjure_island_starter");
+    public static String DESERT = prependRitual("conjure_island_desert");
+
 
     public static String prependRitual(String ritual) {
         return "ritual_" + ritual;

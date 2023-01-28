@@ -1,0 +1,15 @@
+{
+  "category": "ars_nouveau:rituals",
+  "icon": "ars_caelum:ritual_conjure_island_cascading",
+  "name": "item.ars_caelum.ritual_conjure_island_cascading",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "ars_caelum.ritual_desc.ritual_conjure_island_cascading"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "ars_caelum:ritual_conjure_island_cascading"
+    }
+  ]
+}

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ars_caelum:cascade_ritual"
+        "recipe": "ars_caelum:ritual_mana_regeneration"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "ars_caelum:cascade_ritual"
+      "ars_caelum:ritual_mana_regeneration"
     ]
   }
 }

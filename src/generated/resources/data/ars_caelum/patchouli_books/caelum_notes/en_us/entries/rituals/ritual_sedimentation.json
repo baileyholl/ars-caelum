@@ -1,0 +1,15 @@
+{
+  "category": "ars_nouveau:rituals",
+  "icon": "ars_caelum:ritual_sedimentation",
+  "name": "item.ars_caelum.ritual_sedimentation",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "ars_caelum.ritual_desc.ritual_sedimentation"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "ars_caelum:ritual_sedimentation"
+    }
+  ]
+}

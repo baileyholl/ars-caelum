@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ars_caelum:vexing_ritual"
+        "recipe": "ars_caelum:ritual_sedimentation"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "ars_caelum:vexing_ritual"
+      "ars_caelum:ritual_sedimentation"
     ]
   }
 }
