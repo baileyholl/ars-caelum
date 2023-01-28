@@ -72,6 +72,11 @@ public abstract class ConjureBiomeRitual extends AbstractRitual {
     }
 
     @Override
+    public boolean canConsumeItem(ItemStack stack) {
+        return stack.is(ItemTagProvider.SOURCE_GEM_TAG);
+    }
+
+    @Override
     public int getSourceCost() {
         return 50;
     }

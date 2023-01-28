@@ -22,6 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.common.Tags;
 
 import java.io.IOException;
@@ -137,7 +138,16 @@ public class ArsProviders {
                     .build()
             );
 
+            recipes.add(builder()
+                    .withPedestalItem(3,Items.SCULK_SENSOR)
+                    .buildEnchantmentRecipe(Enchantments.SWIFT_SNEAK, 1, 3000));
+            recipes.add(builder()
+                    .withPedestalItem(3,Items.SCULK_SHRIEKER)
+                    .buildEnchantmentRecipe(Enchantments.SWIFT_SNEAK, 2, 6000));
 
+            recipes.add(builder()
+                    .withPedestalItem(3,Items.SCULK_CATALYST)
+                    .buildEnchantmentRecipe(Enchantments.SWIFT_SNEAK, 3, 9000));
             Path output = this.generator.getOutputFolder();
             for (EnchantingApparatusRecipe g : recipes){
                 if (g != null){
@@ -166,12 +176,6 @@ public class ArsProviders {
 
         @Override
         public void run(CachedOutput cache) throws IOException {
-
-            /*
-            recipes.add(new ImbuementRecipe("example_focus", Ingredient.of(Items.AMETHYST_SHARD), new ItemStack(ItemsRegistry.SUMMONING_FOCUS, 1), 5000)
-                    .withPedestalItem(ItemsRegistry.WILDEN_TRIBUTE)
-            );
-            */
 
             Path output = generator.getOutputFolder();
             for(ImbuementRecipe g : recipes){
