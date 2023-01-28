@@ -14,11 +14,11 @@ public class ManaRegenRitual extends AbstractRitual {
     @Override
     protected void tick() {
         if(getWorld().isClientSide){
-            ParticleUtil.spawnRitualAreaEffect(getPos(), getWorld(), getWorld().getRandom(), getCenterColor(), 3);
+            ParticleUtil.spawnRitualAreaEffect(getPos(), getWorld(), getWorld().getRandom(), getCenterColor(), 5, 10, 2);
         }else{
             if(getWorld().getGameTime() % 40 == 0){
                 getWorld().getEntitiesOfClass(Player.class, new AABB(getPos()).inflate(5)).forEach(entity -> {
-                    entity.addEffect(new MobEffectInstance(ModPotions.MANA_REGEN_EFFECT.get(), 20 * 10));
+                    entity.addEffect(new MobEffectInstance(ModPotions.MANA_REGEN_EFFECT.get(), 20 * 10, 0, false, false, true));
                 });
             }
         }
@@ -36,6 +36,6 @@ public class ManaRegenRitual extends AbstractRitual {
 
     @Override
     public String getLangDescription() {
-        return "Grants a small amount of mana to all players nearby.";
+        return "Grants mana regeneration to all players nearby.";
     }
 }

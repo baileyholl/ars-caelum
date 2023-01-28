@@ -8,8 +8,9 @@
   "ars_caelum.ritual_desc.ritual_end_portal": "Creates an island with an end portal. This ritual requires a full jar of Source. NOTE: This ritual must be performed 14 blocks away from other blocks.",
   "ars_caelum.ritual_desc.ritual_flowering": "Populates the nearby area with flowers and grass. Augmenting with a source gem will increase the radius by 1 for each gem.",
   "ars_caelum.ritual_desc.ritual_forestation": "Places grown Oak and Birch trees, and applies bonemeal in a 7x7 (circular) area. Augmenting with a source gem will increase the radius by 1 for each gem. Augmenting with a Brown Mushroom will convert the area to Podzol and spawn taiga resources. Augmenting with Glow Berries will spawn jungle resources.",
-  "ars_caelum.ritual_desc.ritual_mana_regeneration": "Grants a small amount of mana to all players nearby.",
+  "ars_caelum.ritual_desc.ritual_mana_regeneration": "Grants mana regeneration to all players nearby.",
   "ars_caelum.ritual_desc.ritual_sedimentation": "Converts four nearby water sources and will produce cobblestone on the last source consumed.",
+  "ars_caelum.ritual_desc.starter_island_ritual": "",
   "ars_caelum.tablet_of": "Tablet of %s",
   "item.ars_caelum.ritual_conjure_island_blazing": "Conjure Island: Blazing",
   "item.ars_caelum.ritual_conjure_island_cascading": "Conjure Island: Cascading",
@@ -21,5 +22,6 @@
   "item.ars_caelum.ritual_flowering": "Flowering",
   "item.ars_caelum.ritual_forestation": "Forestation",
   "item.ars_caelum.ritual_mana_regeneration": "Mana Regeneration",
-  "item.ars_caelum.ritual_sedimentation": "Sedimentation"
+  "item.ars_caelum.ritual_sedimentation": "Sedimentation",
+  "item.ars_caelum.starter_island_ritual": "Conjure Island: Starter"
 }

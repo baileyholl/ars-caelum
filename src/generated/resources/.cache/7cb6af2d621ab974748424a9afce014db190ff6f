@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-26T20:09:50.9651051	Item Models: ars_caelum
+// 1.19.2	2023-01-27T19:34:23.6407154	Item Models: ars_caelum
 6aada288420734af231bf62bc47f9683f9b1e7cc assets/ars_caelum/models/item/ritual_conjure_island_blazing.json
 f2923a444c4d002979347074cb8be9144731283d assets/ars_caelum/models/item/ritual_conjure_island_cascading.json
 cde22e1881e778e7f60ead67baa82e46bceadb75 assets/ars_caelum/models/item/ritual_conjure_island_flourishing.json
@@ -10,3 +10,4 @@ a163c9ce1e63e428f3fa804b66e491b455f18540 assets/ars_caelum/models/item/ritual_fl
 40ccc600381e4c812b4034b9e5ae573d105be2b7 assets/ars_caelum/models/item/ritual_forestation.json
 7eb11235ee029dadededd6c42bed6d99e69b4ba8 assets/ars_caelum/models/item/ritual_mana_regeneration.json
 2ccf535b7f373d973fe35b8c6ccac3c886624cfd assets/ars_caelum/models/item/ritual_sedimentation.json
+a163c9ce1e63e428f3fa804b66e491b455f18540 assets/ars_caelum/models/item/starter_island_ritual.json

@@ -19,11 +19,11 @@ import java.util.List;
 public abstract class StructureRitual extends AbstractRitual {
     public ResourceLocation structure;
     public BlockPos offset;
-    List<StructureTemplate.StructureBlockInfo> blocks = new ArrayList<>();
-    int index;
-    int sourceRequired;
-    boolean hasConsumed;
-    ResourceKey<Biome> biome;
+    public List<StructureTemplate.StructureBlockInfo> blocks = new ArrayList<>();
+    public int index;
+    public int sourceRequired;
+    public boolean hasConsumed;
+    public ResourceKey<Biome> biome;
 
     public StructureRitual(ResourceLocation structure, BlockPos offset, int sourceRequired, ResourceKey<Biome> biome){
         this.structure = structure;
