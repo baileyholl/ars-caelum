@@ -68,13 +68,13 @@ public class ArsProviders {
             replaceAn.add(stone);
             replaceAn.add(new CrushRecipe("gravel", Ingredient.of(Tags.Items.GRAVEL))
                     .withItems(Items.SAND.getDefaultInstance())
-                    .withItems(Items.LAPIS_LAZULI.getDefaultInstance(), 0.2f)
+                    .withItems(Items.LAPIS_LAZULI.getDefaultInstance(), 0.05f)
                     .withItems(Items.DIAMOND.getDefaultInstance(), 0.01f)
                     .withItems(Items.FLINT.getDefaultInstance(), 0.02f));
 
             replaceAn.add(new CrushRecipe("sand", Ingredient.of(Tags.Items.SAND))
                     .withItems(Items.CLAY_BALL.getDefaultInstance(), 0.05f)
-                    .withItems(Items.REDSTONE.getDefaultInstance(), 0.2f).skipBlockPlace());
+                    .withItems(Items.REDSTONE.getDefaultInstance(), 0.05f).skipBlockPlace());
             Path output = this.generator.getOutputFolder();
             for (CrushRecipe g : recipes) {
                 Path path = getRecipePath(output, g.getId().getPath());

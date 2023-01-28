@@ -2,6 +2,7 @@ package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
+import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 
@@ -23,5 +24,10 @@ public class FlourishingIslandRitual extends StructureRitual{
     @Override
     public String getLangDescription() {
         return "Creates an island of Flourishing Archwoods, sugarcane, moss, and bamboo. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
+    }
+
+    @Override
+    public ParticleColor getCenterColor() {
+        return new ParticleColor(100, 255, 100);
     }
 }

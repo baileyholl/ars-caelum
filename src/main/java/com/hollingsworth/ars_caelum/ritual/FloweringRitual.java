@@ -4,6 +4,7 @@ import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.ars_caelum.ritual.features.BonemealFeature;
 import com.hollingsworth.ars_caelum.ritual.features.PlaceBlockFeature;
+import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -41,5 +42,10 @@ public class FloweringRitual extends FeaturePlacementRitual {
     @Override
     public String getLangDescription() {
         return "Populates the nearby area with flowers and grass. Augmenting with a source gem will increase the radius by 1 for each gem.";
+    }
+
+    @Override
+    public ParticleColor getCenterColor() {
+        return new ParticleColor(100, 100, 100);
     }
 }

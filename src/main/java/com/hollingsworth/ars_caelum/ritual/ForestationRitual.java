@@ -3,6 +3,7 @@ package com.hollingsworth.ars_caelum.ritual;
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.ars_caelum.ritual.features.*;
+import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -61,5 +62,10 @@ public class ForestationRitual extends FeaturePlacementRitual {
     @Override
     public String getLangDescription() {
         return "Places grown Oak and Birch trees, and applies bonemeal in a 7x7 (circular) area. Augmenting with a source gem will increase the radius by 1 for each gem. Augmenting with a Brown Mushroom will convert the area to Podzol and spawn taiga resources. Augmenting with Glow Berries will spawn jungle resources.";
+    }
+
+    @Override
+    public ParticleColor getCenterColor() {
+        return new ParticleColor(0, 255, 0);
     }
 }

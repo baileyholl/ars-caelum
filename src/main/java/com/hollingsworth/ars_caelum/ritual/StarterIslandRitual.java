@@ -2,6 +2,7 @@ package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.config.ExampleConfig;
+import com.hollingsworth.ars_caelum.lib.RitualLang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -31,7 +32,7 @@ public class StarterIslandRitual extends StructureRitual{
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, "starter_island_ritual");
+        return new ResourceLocation(ArsCaelum.MODID, RitualLang.STARTER);
     }
 
     @Override

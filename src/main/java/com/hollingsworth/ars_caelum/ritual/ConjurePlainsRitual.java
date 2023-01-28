@@ -6,6 +6,7 @@ import com.hollingsworth.ars_caelum.util.ManhattenTracker;
 import com.hollingsworth.ars_caelum.util.RitualUtil;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.api.util.BlockUtil;
+import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -110,5 +111,10 @@ public class ConjurePlainsRitual extends AbstractRitual {
             tag.put("tracker", tracker.serialize(new CompoundTag()));
         }
         tag.putInt("radius", radius);
+    }
+
+    @Override
+    public ParticleColor getCenterColor() {
+        return new ParticleColor(100, 255, 100);
     }
 }
