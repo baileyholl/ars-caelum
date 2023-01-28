@@ -128,16 +128,15 @@ public class ArsProviders {
 
         @Override
         public void run(CachedOutput cache) throws IOException {
-            //example of an apparatus recipe
-            /*
+
             recipes.add(builder()
-                    .withReagent(ItemsRegistry.SOURCE_GEM)
-                    .withPedestalItem(4, Recipes.SOURCE_GEM)
-                    .withResult(ItemsRegistry.BUCKET_OF_SOURCE)
-                    .withSource(100)
+                    .withReagent(Ingredient.of(Tags.Items.STORAGE_BLOCKS_DIAMOND))
+                    .withPedestalItem(8, Items.NAUTILUS_SHELL)
+                    .withResult(Items.HEART_OF_THE_SEA)
+                    .withSourceCost(10000)
                     .build()
             );
-             */
+
 
             Path output = this.generator.getOutputFolder();
             for (EnchantingApparatusRecipe g : recipes){

@@ -1,4 +1,4 @@
-// 1.19.2	2023-01-28T15:31:12.4966008	Recipes
+// 1.19.2	2023-01-28T16:24:19.8717263	Recipes
 5783387ba96801d2d72374e5df8546cd6a3041c4 data/ars_caelum/advancements/recipes/ars_nouveau/ritual_conjure_island_blazing.json
 bf98e47227bbf7cfcb80aa86cbd47504769e9e75 data/ars_caelum/advancements/recipes/ars_nouveau/ritual_conjure_island_cascading.json
 c144b9b37f96b99961a9504ca2aba5e114168d55 data/ars_caelum/advancements/recipes/ars_nouveau/ritual_conjure_island_desert.json
@@ -23,3 +23,7 @@ a5592ea1282fc841071f302c7b8b4d091721e943 data/ars_caelum/recipes/ritual_flowerin
 037565ec216b212433a23702ab3019dcebce4795 data/ars_caelum/recipes/ritual_forestation.json
 47192d69f076e3e6d338328995d5cc7fc5df34b7 data/ars_caelum/recipes/ritual_mana_regeneration.json
 295a1f8dd23ae35c23e770841125a23f22ad544c data/ars_caelum/recipes/ritual_sedimentation.json
+a406b137e053286627bbd2d209edb1c217ece20d data/minecraft/advancements/recipes/decorations/pointed_dripstone.json
+e1f1efad8487e4574f901d83c80efebfe6cc26a8 data/minecraft/advancements/recipes/misc/turtle_egg.json
+4fe4242ad1176bd028ac046c17699d43c77b2ece data/minecraft/recipes/pointed_dripstone.json
+91acc07d2c502b9ba67ac5b340ecbb1924e7a6d8 data/minecraft/recipes/turtle_egg.json

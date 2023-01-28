@@ -1,0 +1,55 @@
+{
+  "type": "ars_nouveau:enchanting_apparatus",
+  "keepNbtOfReagent": false,
+  "output": {
+    "item": "minecraft:heart_of_the_sea"
+  },
+  "pedestalItems": [
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    },
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    },
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    },
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    },
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    },
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    },
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    },
+    {
+      "item": {
+        "item": "minecraft:nautilus_shell"
+      }
+    }
+  ],
+  "reagent": [
+    {
+      "tag": "forge:storage_blocks/diamond"
+    }
+  ],
+  "sourceCost": 10000
+}

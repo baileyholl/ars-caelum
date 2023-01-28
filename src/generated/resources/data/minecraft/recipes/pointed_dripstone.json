@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ars_nouveau:water_essence"
+    },
+    {
+      "tag": "forge:stone"
+    },
+    {
+      "tag": "forge:stone"
+    },
+    {
+      "tag": "forge:stone"
+    },
+    {
+      "tag": "forge:stone"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:pointed_dripstone"
+  }
+}
