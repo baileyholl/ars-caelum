@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import oshi.util.tuples.Pair;
 
 import java.util.function.Function;
 
@@ -16,12 +17,14 @@ public class ConvertBlockFeature implements IPlaceableFeature {
     public double chance;
     Function<BlockState, Boolean> convertable;
     Function<BlockState, BlockState> convert;
+    Pair<BlockPos, BlockPos> offsets;
 
-    public ConvertBlockFeature(double distance, double chance, Function<BlockState, Boolean> convertable, Function<BlockState, BlockState> convert){
+    public ConvertBlockFeature(double distance, double chance, Function<BlockState, Boolean> convertable, Function<BlockState, BlockState> convert, Pair<BlockPos, BlockPos> offsets) {
         this.distance = distance;
         this.chance = chance;
         this.convertable = convertable;
         this.convert = convert;
+        this.offsets = offsets;
     }
 
     @Override
@@ -43,5 +46,10 @@ public class ConvertBlockFeature implements IPlaceableFeature {
     @Override
     public String getFeatureName() {
         return "convert_blockstate";
+    }
+
+    @Override
+    public Pair<BlockPos, BlockPos> getCustomOffsets() {
+        return offsets;
     }
 }

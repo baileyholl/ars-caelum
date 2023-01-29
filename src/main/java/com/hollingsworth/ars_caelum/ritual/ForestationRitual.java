@@ -11,6 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
+import oshi.util.tuples.Pair;
 
 import java.util.List;
 
@@ -22,9 +23,8 @@ public class ForestationRitual extends FeaturePlacementRitual {
         boolean isTaiga = getConsumedItems().stream().anyMatch(i -> i.getItem() == Items.BROWN_MUSHROOM);
         boolean isJungle = getConsumedItems().stream().anyMatch(i -> i.getItem() == Items.GLOW_BERRIES);
         if(isTaiga){
-            lowerOffset = new BlockPos(0, -1, 0);
             features.add(new RandomTreeFeature(List.of(Blocks.SPRUCE_SAPLING.defaultBlockState()), 8, 0.8));
-            features.add(new ConvertBlockFeature(0, 0.8, state -> state.is(BlockTags.DIRT) || state.getBlock() == Blocks.GRASS_BLOCK,state -> Blocks.PODZOL.defaultBlockState()));
+            features.add(new ConvertBlockFeature(0, 0.8, state -> state.is(BlockTags.DIRT) || state.getBlock() == Blocks.GRASS_BLOCK,state -> Blocks.PODZOL.defaultBlockState(), new Pair<>(new BlockPos(0,-1,0), BlockPos.ZERO)));
             features.add(new PlaceBlockFeature(0, 0.1, () -> getWorld().random.nextFloat() < 0.3 ? Blocks.LARGE_FERN.defaultBlockState() : Blocks.FERN.defaultBlockState()));
             features.add(new PlaceBlockFeature(0, 0.1, Blocks.BROWN_MUSHROOM::defaultBlockState));
             features.add(new PlaceBlockFeature(0, 0.1, Blocks.GRASS::defaultBlockState));
@@ -32,9 +32,10 @@ public class ForestationRitual extends FeaturePlacementRitual {
         }else if(isJungle){
             features.add(new BigTreeFeature(Blocks.JUNGLE_SAPLING.defaultBlockState(), 12, 0.3));
             features.add(new RandomTreeFeature(List.of(Blocks.JUNGLE_SAPLING.defaultBlockState()), 6, 0.95));
-            features.add(new PlaceBlockFeature(0, 0.1, Blocks.FERN::defaultBlockState));
+            features.add(new CocoaFeature(6, 0.4));
             features.add(new PlaceBlockFeature(0, 0.1, Blocks.GRASS::defaultBlockState));
             features.add(new PlaceBlockFeature(0, 0.01, Blocks.MELON::defaultBlockState));
+            features.add(new PlaceBlockFeature(0, 0.1, Blocks.FERN::defaultBlockState));
         } else {
             features.add(new RandomTreeFeature(List.of(Blocks.OAK_SAPLING.defaultBlockState(), Blocks.BIRCH_SAPLING.defaultBlockState()), 5, 0.8));
             features.add(new BonemealFeature(6, 0.8));

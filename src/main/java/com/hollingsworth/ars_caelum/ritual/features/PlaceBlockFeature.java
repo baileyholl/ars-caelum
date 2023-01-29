@@ -2,9 +2,11 @@ package com.hollingsworth.ars_caelum.ritual.features;
 
 import com.hollingsworth.ars_caelum.ritual.FeaturePlacementRitual;
 import com.hollingsworth.ars_caelum.ritual.IPlaceableFeature;
+import com.hollingsworth.arsnouveau.api.ANFakePlayer;
 import com.hollingsworth.arsnouveau.common.block.tile.RitualBrazierTile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -36,8 +38,9 @@ public class PlaceBlockFeature implements IPlaceableFeature {
     public boolean onPlace(Level level, BlockPos pos, FeaturePlacementRitual placementRitual, RitualBrazierTile brazierTile) {
         BlockState state = block.get();
         if(level.random.nextFloat() < chance && !level.getBlockState(pos.below()).isAir() && state.canSurvive(level, pos)){
-            BlockItem stack = (BlockItem) state.getBlock().asItem();
-            stack.place(new BlockPlaceContext(level, null, InteractionHand.MAIN_HAND, new ItemStack(stack), new BlockHitResult(new Vec3(pos.getX(), pos.getY(), pos.getZ()), Direction.DOWN, pos, false)));
+            if(state.getBlock().asItem() instanceof BlockItem blockItem) {
+                blockItem.place(new BlockPlaceContext(level, ANFakePlayer.getPlayer((ServerLevel) level), InteractionHand.MAIN_HAND, new ItemStack(blockItem), new BlockHitResult(new Vec3(pos.getX(), pos.getY(), pos.getZ()), Direction.DOWN, pos, false)));
+            }
             return true;
         }
         return false;

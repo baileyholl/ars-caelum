@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
+import oshi.util.tuples.Pair;
 
 import java.util.*;
 
@@ -45,18 +46,26 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
         for(IPlaceableFeature feature : features){
             featureMap.put(feature.getFeatureName(), new ArrayList<>());
         }
-        targetPositions = new ArrayList<>();
+        targetPositions = getTargetPositions();
+    }
+
+    public List<BlockPos> getTargetPositions(){
+        List<BlockPos> positions = new ArrayList<>();
         BlockPos pos = getPos();
-        for(BlockPos nextPos : BlockPos.betweenClosed(getPos().offset(-checkRadius, 0, -checkRadius).offset(lowerOffset), getPos().offset(checkRadius, 0, checkRadius).offset(upperOffset))){
+        Pair<BlockPos, BlockPos> offsets = features.get(featureIndex).getCustomOffsets();
+        BlockPos lowerBound = getPos().offset(-checkRadius, 0, -checkRadius).offset(lowerOffset).offset(offsets.getA());
+        BlockPos upperBound = getPos().offset(checkRadius, 0, checkRadius).offset(upperOffset).offset(offsets.getB());
+        for(BlockPos nextPos : BlockPos.betweenClosed(lowerBound, upperBound)){
             double x = nextPos.getX() + 0.5;
             double y = nextPos.getY() + 0.5;
             double z = nextPos.getZ() + 0.5;
             double dist = BlockUtil.distanceFrom(new Vec3(x, y, z), new Vec3(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5));
             if (dist <= checkRadius) {
-                targetPositions.add(nextPos.immutable());
+                positions.add(nextPos.immutable());
             }
         }
-        Collections.shuffle(targetPositions);
+        Collections.shuffle(positions);
+        return positions;
     }
 
 
@@ -69,12 +78,12 @@ public abstract class FeaturePlacementRitual extends AbstractRitual {
         while(true){
             if (positionIndex >= targetPositions.size()) {
                 featureIndex++;
-                Collections.shuffle(targetPositions);
+                if (featureIndex >= features.size()) {
+                    setFinished();
+                    return;
+                }
+                targetPositions = getTargetPositions();
                 positionIndex = 0;
-            }
-            if (featureIndex >= features.size()) {
-                setFinished();
-                return;
             }
             BlockPos targetPos = targetPositions.get(positionIndex);
             IPlaceableFeature feature = features.get(featureIndex);
