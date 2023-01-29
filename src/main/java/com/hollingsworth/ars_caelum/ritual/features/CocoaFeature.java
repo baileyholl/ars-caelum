@@ -28,7 +28,6 @@ public class CocoaFeature implements IPlaceableFeature {
         this.distance = distance;
         this.chance = chance;
         BlockState state = Blocks.COCOA.defaultBlockState();
-        // make states for each direction
         BlockState north = state.setValue(net.minecraft.world.level.block.CocoaBlock.FACING, Direction.NORTH);
         BlockState south = state.setValue(net.minecraft.world.level.block.CocoaBlock.FACING, Direction.SOUTH);
         BlockState east = state.setValue(net.minecraft.world.level.block.CocoaBlock.FACING, Direction.EAST);
