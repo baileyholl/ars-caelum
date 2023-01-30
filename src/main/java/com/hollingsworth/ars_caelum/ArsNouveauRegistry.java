@@ -14,18 +14,14 @@ public class ArsNouveauRegistry {
     public static void registerGlyphs(){
         ArsNouveauAPI api = ArsNouveauAPI.getInstance();;
         api.registerRitual(new ManaRegenRitual());
-        api.registerRitual(new ConjurePlainsRitual());
         api.registerRitual(new CobbleRitual());
-        api.registerRitual(new ForestationRitual());
         api.registerRitual(new BlazingIslandRitual());
         api.registerRitual(new CascadingIslandRitual());
         api.registerRitual(new FlourishingIslandRitual());
         api.registerRitual(new VexingIslandRitual());
         api.registerRitual(new GeodeIslandRitual());
-        api.registerRitual(new FloweringRitual());
         api.registerRitual(new EndRitual());
         api.registerRitual(new StarterIslandRitual());
-        api.registerRitual(new ConjureDesertRitual());
         api.registerRitual(new SculkIslandRitual());
     }
 

@@ -2,10 +2,11 @@ package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
+import com.hollingsworth.arsnouveau.api.ritual.StructureRitual;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 
-public class GeodeIslandRitual extends StructureRitual{
+public class GeodeIslandRitual extends StructureRitual {
     public GeodeIslandRitual() {
         super(new ResourceLocation(ArsCaelum.MODID, "geode"),  new BlockPos(-8, -3, -7), 10000, null);
     }

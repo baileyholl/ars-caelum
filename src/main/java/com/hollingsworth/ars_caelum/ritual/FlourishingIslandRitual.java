@@ -2,12 +2,13 @@ package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
+import com.hollingsworth.arsnouveau.api.ritual.StructureRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
 
-public class FlourishingIslandRitual extends StructureRitual{
+public class FlourishingIslandRitual extends StructureRitual {
     public FlourishingIslandRitual() {
         super(new ResourceLocation(ArsCaelum.MODID, "flourishing"),  new BlockPos(-13, -5, -13), 10000, Biomes.MANGROVE_SWAMP);
     }

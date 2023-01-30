@@ -2,11 +2,12 @@ package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
+import com.hollingsworth.arsnouveau.api.ritual.StructureRitual;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biomes;
 
-public class SculkIslandRitual extends StructureRitual{
+public class SculkIslandRitual extends StructureRitual {
     public SculkIslandRitual() {
         super(new ResourceLocation(ArsCaelum.MODID, "sculk"),  new BlockPos(-13, -5, -13), 10000, Biomes.DEEP_DARK);
     }

@@ -3,12 +3,13 @@ package com.hollingsworth.ars_caelum.ritual;
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.config.ExampleConfig;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
+import com.hollingsworth.arsnouveau.api.ritual.StructureRitual;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 
-public class StarterIslandRitual extends StructureRitual{
+public class StarterIslandRitual extends StructureRitual {
     public StarterIslandRitual() {
         super(null, BlockPos.ZERO, 0, null);
     }

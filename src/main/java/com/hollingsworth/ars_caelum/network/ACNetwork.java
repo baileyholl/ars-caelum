@@ -16,6 +16,5 @@ public class ACNetwork {
 
     public static void registerMessages() {
         INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation(ArsCaelum.MODID, "network"), () -> "1.0", s -> true, s -> true);
-        INSTANCE.registerMessage(nextID(), ChangeBiomePacket.class, ChangeBiomePacket::encode, ChangeBiomePacket::new, ChangeBiomePacket.Handler::onMessage);
     }
 }
