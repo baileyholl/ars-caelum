@@ -9,7 +9,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class CobbleRitual extends AbstractRitual {
     int converted;
@@ -27,13 +29,21 @@ public class CobbleRitual extends AbstractRitual {
                         converted++;
                         if(converted >= 4){
                             converted = 0;
-                            getWorld().setBlockAndUpdate(pos, Blocks.COBBLESTONE.defaultBlockState());
+                            boolean isDeepslate = getConsumedItems().stream().anyMatch(itemStack -> itemStack.getItem() == Blocks.DEEPSLATE.defaultBlockState().getBlock().asItem());
+                            BlockState state = isDeepslate ? Blocks.DEEPSLATE.defaultBlockState() : Blocks.COBBLESTONE.defaultBlockState();
+                            getWorld().setBlockAndUpdate(pos, state);
                         }
                         return;
                     }
                 }
             }
         }
+    }
+
+    @Override
+    public boolean canConsumeItem(ItemStack stack) {
+        boolean isDeepslate = getConsumedItems().stream().anyMatch(itemStack -> itemStack.getItem() == Blocks.DEEPSLATE.defaultBlockState().getBlock().asItem());
+        return super.canConsumeItem(stack) || (!isDeepslate && stack.getItem() == Blocks.DEEPSLATE.defaultBlockState().getBlock().asItem());
     }
 
     @Override
@@ -59,7 +69,7 @@ public class CobbleRitual extends AbstractRitual {
 
     @Override
     public String getLangDescription() {
-        return "Converts four nearby water sources and will produce cobblestone on the last source consumed.";
+        return "Converts four nearby water sources and will produce cobblestone on the last source consumed. Augment with Deepslate to produce Deepslate instead.";
     }
 
 }

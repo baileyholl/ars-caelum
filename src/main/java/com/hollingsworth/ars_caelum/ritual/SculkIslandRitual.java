@@ -26,4 +26,9 @@ public class SculkIslandRitual extends StructureRitual {
     public ResourceLocation getRegistryName() {
         return new ResourceLocation(ArsCaelum.MODID, RitualLang.SCULK);
     }
+
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }

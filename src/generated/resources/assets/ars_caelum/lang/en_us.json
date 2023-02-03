@@ -8,7 +8,7 @@
   "ars_caelum.ritual_desc.ritual_conjure_island_starter": "",
   "ars_caelum.ritual_desc.ritual_conjure_island_vexing": "Creates an island of Vexing Archwoods, source berries, mycelium, and mushrooms. Converts the area to Mushroom Island. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ",
   "ars_caelum.ritual_desc.ritual_mana_regeneration": "Grants mana regeneration to all players nearby.",
-  "ars_caelum.ritual_desc.ritual_sedimentation": "Converts four nearby water sources and will produce cobblestone on the last source consumed.",
+  "ars_caelum.ritual_desc.ritual_sedimentation": "Converts four nearby water sources and will produce cobblestone on the last source consumed. Augment with Deepslate to produce Deepslate instead.",
   "ars_caelum.tablet_of": "Tablet of %s",
   "item.ars_caelum.ritual_conjure_island_blazing": "Conjure Island: Blazing",
   "item.ars_caelum.ritual_conjure_island_cascading": "Conjure Island: Cascading",

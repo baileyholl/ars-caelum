@@ -31,4 +31,9 @@ public class BlazingIslandRitual extends StructureRitual {
     public ParticleColor getCenterColor() {
         return new ParticleColor(255, 100, 100);
     }
+
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }

@@ -32,4 +32,9 @@ public class CascadingIslandRitual extends StructureRitual {
     public ParticleColor getCenterColor() {
         return new ParticleColor(100, 100, 255);
     }
+
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }

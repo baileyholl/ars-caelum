@@ -25,4 +25,9 @@ public class EndRitual extends StructureRitual {
     public String getLangDescription() {
         return "Creates an island with an end portal. This ritual requires a full jar of Source. NOTE: This ritual must be performed 14 blocks away from other blocks.";
     }
+
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }

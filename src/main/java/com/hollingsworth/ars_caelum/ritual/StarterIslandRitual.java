@@ -41,4 +41,8 @@ public class StarterIslandRitual extends StructureRitual {
         return "Conjure Island: Starter";
     }
 
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }

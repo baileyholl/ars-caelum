@@ -26,4 +26,9 @@ public class VexingIslandRitual extends StructureRitual {
     public String getLangDescription() {
         return "Creates an island of Vexing Archwoods, source berries, mycelium, and mushrooms. Converts the area to Mushroom Island. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
     }
+
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }

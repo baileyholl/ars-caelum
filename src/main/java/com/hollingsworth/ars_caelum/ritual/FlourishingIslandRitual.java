@@ -32,4 +32,9 @@ public class FlourishingIslandRitual extends StructureRitual {
     public ParticleColor getCenterColor() {
         return new ParticleColor(100, 255, 100);
     }
+
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }

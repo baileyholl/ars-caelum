@@ -25,4 +25,9 @@ public class GeodeIslandRitual extends StructureRitual {
     public String getLangDescription() {
         return "Creates an island in the shape of an Amethyst Geode. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
     }
+
+    @Override
+    public boolean canBeTraded() {
+        return false;
+    }
 }
