@@ -1,4 +1,4 @@
-// 1.19.2	2023-02-03T15:11:50.5017388	Example Patchouli Datagen
+// 1.19.2	2023-02-10T14:33:25.2065507	Example Patchouli Datagen
 0a9a00bdf7372bf58e83c51cf34374918b8a8ff6 data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_conjure_island_blazing.json
 6341c570413de4f6c8d7cc1b5af808ed556d3dd1 data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_conjure_island_cascading.json
 18e7edf43e0c05b615bdf5383daeb922fcbf375d data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_conjure_island_end_portal.json
@@ -6,6 +6,7 @@
 142187f0cb7d49167ba76f4bde09c1b2e16c6163 data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_conjure_island_geode.json
 0414e102a4b1690b56192d5df41f96472f0fd0f9 data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_conjure_island_sculk.json
 c09aa2fc040514ba69402caabe0ed4c5ce0776d2 data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_conjure_island_vexing.json
+a5fa40f32b0ef9ccaa2621d0b9efb0616de16c0e data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_conjure_island_village.json
 f3fb58536cd3528ab4fc54f6e1c2a3c253b4aea7 data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_elder_summon.json
 5444f20b3fabcea0c39cca7e97dcf8f67fdd7bc5 data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_mana_regeneration.json
 a238a3e7eefa5d863a726d82a613a247761e072f data/ars_caelum/patchouli_books/caelum_notes/en_us/entries/rituals/ritual_sedimentation.json

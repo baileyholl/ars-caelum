@@ -39,6 +39,9 @@ public class RecipeData extends com.hollingsworth.arsnouveau.common.datagen.Reci
         shapelessBuilder(Items.POINTED_DRIPSTONE, 4).requires(ItemsRegistry.WATER_ESSENCE).requires(Ingredient.of(Tags.Items.STONE), 4).save(consumer);
         shapelessBuilder(getAddonRitual(RitualLang.SCULK)).requires(BlockRegistry.VEXING_LOG).requires(Items.DEEPSLATE, 4)
                 .requires(Ingredient.of(Tags.Items.STORAGE_BLOCKS_AMETHYST), 4).save(consumer);
+
+        shapelessBuilder(getAddonRitual(RitualLang.VILLAGE)).requires(BlockRegistry.FLOURISHING_SAPLING).requires(BlockRegistry.BLAZING_SAPLING).requires(BlockRegistry.CASCADING_SAPLING).requires(Tags.Items.STORAGE_BLOCKS_AMETHYST).requires(Tags.Items.STORAGE_BLOCKS_DIAMOND)
+                .requires(BlockRegistry.CASCADING_LOG).requires(Tags.Items.RODS_BLAZE).save(consumer);
     }
 
     public RitualTablet getAddonRitual(String name) {

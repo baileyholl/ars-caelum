@@ -12,7 +12,7 @@ public class RitualLang {
     public static String STARTER = prependRitual("conjure_island_starter");
     public static String SCULK = prependRitual("conjure_island_sculk");
     public static String ELDER_SUMMON = prependRitual("elder_summon");
-
+    public static String VILLAGE = prependRitual("conjure_island_village");
 
     public static String prependRitual(String ritual) {
         return "ritual_" + ritual;

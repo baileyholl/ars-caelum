@@ -25,7 +25,7 @@ public class FlourishingIslandRitual extends StructureRitual {
 
     @Override
     public String getLangDescription() {
-        return "Creates an island of Flourishing Archwoods, sugarcane, moss, and bamboo. Converts the area to Mangrove Swamp. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
+        return "Creates an island of Flourishing Archwoods, moss, glow berries, and bamboo. Converts the area to Mangrove Swamp. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
     }
 
     @Override
