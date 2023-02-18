@@ -1,7 +1,7 @@
 package com.hollingsworth.ars_caelum.ritual;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
-import com.hollingsworth.ars_caelum.config.ExampleConfig;
+import com.hollingsworth.ars_caelum.config.CaelumConfig;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.arsnouveau.api.ritual.StructureRitual;
 import net.minecraft.core.BlockPos;
@@ -18,11 +18,11 @@ public class StarterIslandRitual extends StructureRitual {
     @Override
     public void setup() {
         if(!getWorld().isClientSide) {
-            this.structure = new ResourceLocation(ExampleConfig.STARTER_ISLAND_RL.get());
-            this.offset = new BlockPos(ExampleConfig.STARTER_RITUAL_OFFSET.get().get(0), ExampleConfig.STARTER_RITUAL_OFFSET.get().get(1), ExampleConfig.STARTER_RITUAL_OFFSET.get().get(2));
-            this.sourceRequired = ExampleConfig.STARTER_RITUAL_SOURCE.get();
-            if (!ExampleConfig.STARTER_RITUAL_BIOME.get().isEmpty()) {
-                Biome biome1 = BuiltinRegistries.BIOME.get(new ResourceLocation(ExampleConfig.STARTER_RITUAL_BIOME.get()));
+            this.structure = new ResourceLocation(CaelumConfig.STARTER_ISLAND_RL.get());
+            this.offset = new BlockPos(CaelumConfig.STARTER_RITUAL_OFFSET.get().get(0), CaelumConfig.STARTER_RITUAL_OFFSET.get().get(1), CaelumConfig.STARTER_RITUAL_OFFSET.get().get(2));
+            this.sourceRequired = CaelumConfig.STARTER_RITUAL_SOURCE.get();
+            if (!CaelumConfig.STARTER_RITUAL_BIOME.get().isEmpty()) {
+                Biome biome1 = BuiltinRegistries.BIOME.get(new ResourceLocation(CaelumConfig.STARTER_RITUAL_BIOME.get()));
                 if (biome1 != null) {
                     this.biome = BuiltinRegistries.BIOME.getResourceKey(biome1).orElse(null);
                 }

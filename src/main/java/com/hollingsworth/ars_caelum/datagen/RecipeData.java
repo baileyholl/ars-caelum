@@ -10,6 +10,7 @@ import com.hollingsworth.arsnouveau.setup.ItemsRegistry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
@@ -41,6 +42,10 @@ public class RecipeData extends com.hollingsworth.arsnouveau.common.datagen.Reci
                 .requires(Ingredient.of(Tags.Items.STORAGE_BLOCKS_AMETHYST), 4).save(consumer);
 
         shapelessBuilder(getAddonRitual(RitualLang.VILLAGE)).requires(BlockRegistry.FLOURISHING_SAPLING).requires(BlockRegistry.BLAZING_SAPLING).requires(BlockRegistry.CASCADING_SAPLING).requires(Tags.Items.STORAGE_BLOCKS_AMETHYST).requires(Tags.Items.STORAGE_BLOCKS_DIAMOND)
+                .requires(BlockRegistry.CASCADING_LOG).requires(Tags.Items.RODS_BLAZE).save(consumer);
+
+        shapelessBuilder(getAddonRitual(RitualLang.ELDER_SUMMON))
+                .requires(Ingredient.of(ItemTags.FISHES), 3)
                 .requires(BlockRegistry.CASCADING_LOG).requires(Tags.Items.RODS_BLAZE).save(consumer);
     }
 

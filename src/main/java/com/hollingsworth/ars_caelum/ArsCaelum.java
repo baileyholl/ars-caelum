@@ -1,6 +1,6 @@
 package com.hollingsworth.ars_caelum;
 
-import com.hollingsworth.ars_caelum.config.ExampleConfig;
+import com.hollingsworth.ars_caelum.config.CaelumConfig;
 import com.hollingsworth.ars_caelum.network.ACNetwork;
 import com.hollingsworth.ars_caelum.registry.ModRegistry;
 import com.hollingsworth.arsnouveau.setup.config.ANModConfig;
@@ -33,7 +33,7 @@ public class ArsCaelum
         modbus.addListener(this::setup);
         modbus.addListener(this::doClientStuff);
         MinecraftForge.EVENT_BUS.register(this);
-        ANModConfig serverConfig = new ANModConfig(ModConfig.Type.SERVER, ExampleConfig.SERVER_CONFIG, ModLoadingContext.get().getActiveContainer(),ArsCaelum.MODID + "-server");
+        ANModConfig serverConfig = new ANModConfig(ModConfig.Type.SERVER, CaelumConfig.SERVER_CONFIG, ModLoadingContext.get().getActiveContainer(),ArsCaelum.MODID + "-server");
         ModLoadingContext.get().getActiveContainer().addConfig(serverConfig);
     }
 

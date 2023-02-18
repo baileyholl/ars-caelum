@@ -8,7 +8,7 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 import java.util.List;
 
 @Mod.EventBusSubscriber
-public class ExampleConfig {
+public class CaelumConfig {
     public static ForgeConfigSpec SERVER_CONFIG;
     public static ForgeConfigSpec.ConfigValue<String> STARTER_ISLAND_RL;
     public static ForgeConfigSpec.ConfigValue<List<Integer>> STARTER_RITUAL_OFFSET;
