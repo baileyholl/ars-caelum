@@ -128,6 +128,7 @@ repositories {
     maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
     mavenCentral()
     mavenLocal()
+    maven { url 'https://jitpack.io' }
 }
 dependencies {
 
@@ -147,7 +148,7 @@ dependencies {
     implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}+${mc_version}")
 
     implementation fg.deobf("com.github.glitchfiend:TerraBlender-forge:${mc_version}-${terrablender_version}")
-
+    implementation fg.deobf("com.github.llamalad7.mixinextras:mixinextras-forge:${mixin_extras_version}")
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
 }
