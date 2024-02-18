@@ -19,9 +19,9 @@ public class Setup {
         gen.addProvider(event.includeServer(), new ArsProviders.EnchantingAppProvider(gen));
         gen.addProvider(event.includeServer(), new ArsProviders.CrushProvider(gen));
         gen.addProvider(event.includeServer(), new ArsProviders.PatchouliProvider(gen));
-        gen.addProvider(event.includeClient(), new LangGen(gen.getPackOutput(), ArsCaelum.MODID, "en_us"));
-        gen.addProvider(event.includeServer(), new RecipeData(gen.getPackOutput()));
-        gen.addProvider(event.includeClient(), new ItemModelGen(gen.getPackOutput(), ArsCaelum.MODID, event.getExistingFileHelper()));
+        gen.addProvider(event.includeClient(), new LangGen(gen, ArsCaelum.MODID, "en_us"));
+        gen.addProvider(event.includeServer(), new RecipeData(gen));
+        gen.addProvider(event.includeClient(), new ItemModelGen(gen, ArsCaelum.MODID, event.getExistingFileHelper()));
     }
 
 }

@@ -5,7 +5,6 @@ import com.hollingsworth.ars_caelum.ritual.StarterIslandRitual;
 import com.hollingsworth.arsnouveau.ArsNouveau;
 import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
 import com.hollingsworth.arsnouveau.api.enchanting_apparatus.EnchantingApparatusRecipe;
-import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.CrushRecipe;
 import com.hollingsworth.arsnouveau.common.crafting.recipes.GlyphRecipe;
@@ -31,7 +30,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.hollingsworth.arsnouveau.setup.registry.RegistryHelper.getRegistryName;
+import static com.hollingsworth.arsnouveau.api.RegistryHelper.getRegistryName;
 
 public class ArsProviders {
 
@@ -46,7 +45,7 @@ public class ArsProviders {
         }
 
         @Override
-        public void collectJsons(CachedOutput cache) {
+        public void run(CachedOutput cache) throws IOException {
             CrushRecipe.CrushOutput goldNug = new CrushRecipe.CrushOutput(Items.GOLD_NUGGET.getDefaultInstance(), 0.2f, 3);
             CrushRecipe.CrushOutput ironNug = new CrushRecipe.CrushOutput(Items.IRON_NUGGET.getDefaultInstance(), 0.2f, 3);
             // copper nug
@@ -73,14 +72,15 @@ public class ArsProviders {
             replaceAn.add(new CrushRecipe("sand", Ingredient.of(Tags.Items.SAND))
                     .withItems(Items.CLAY_BALL.getDefaultInstance(), 0.05f)
                     .withItems(Items.REDSTONE.getDefaultInstance(), 0.05f).skipBlockPlace());
+            Path output = this.generator.getOutputFolder();
             for (CrushRecipe g : recipes) {
                 Path path = getRecipePath(output, g.getId().getPath());
-                saveStable(cache, g.asRecipe(), path);
+                DataProvider.saveStable(cache, g.asRecipe(), path);
             }
 
             for (CrushRecipe g : replaceAn) {
                 Path path = getANPath(output, g.getId().getPath());
-                saveStable(cache, g.asRecipe(), path);
+                DataProvider.saveStable(cache, g.asRecipe(), path);
             }
         }
 
@@ -99,13 +99,15 @@ public class ArsProviders {
         }
 
         @Override
-        public void collectJsons(CachedOutput cache) {
+        public void run(CachedOutput cache) throws IOException {
+
+            Path output = this.generator.getOutputFolder();
 
 //            recipes.add(get(TestEffect.INSTANCE).withItem(Items.DIRT));
 
             for (GlyphRecipe recipe : recipes) {
                 Path path = getScribeGlyphPath(output, recipe.output.getItem());
-                saveStable(cache, recipe.asRecipe(), path);
+                DataProvider.saveStable(cache, recipe.asRecipe(), path);
             }
 
         }
@@ -126,7 +128,7 @@ public class ArsProviders {
         }
 
         @Override
-        public void collectJsons(CachedOutput cache) {
+        public void run(CachedOutput cache) throws IOException {
 
             recipes.add(builder()
                     .withReagent(Ingredient.of(Tags.Items.STORAGE_BLOCKS_DIAMOND))
@@ -146,10 +148,11 @@ public class ArsProviders {
             recipes.add(builder()
                     .withPedestalItem(3,Items.SCULK_CATALYST)
                     .buildEnchantmentRecipe(Enchantments.SWIFT_SNEAK, 3, 9000));
+            Path output = this.generator.getOutputFolder();
             for (EnchantingApparatusRecipe g : recipes){
                 if (g != null){
                     Path path = getRecipePath(output, g.getId().getPath());
-                    saveStable(cache, g.asRecipe(), path);
+                    DataProvider.saveStable(cache, g.asRecipe(), path);
                 }
             }
 
@@ -172,10 +175,12 @@ public class ArsProviders {
         }
 
         @Override
-        public void collectJsons(CachedOutput cache) {
+        public void run(CachedOutput cache) throws IOException {
+
+            Path output = generator.getOutputFolder();
             for(ImbuementRecipe g : recipes){
                 Path path = getRecipePath(output, g.getId().getPath());
-                saveStable(cache, g.asRecipe(), path);
+                DataProvider.saveStable(cache, g.asRecipe(), path);
             }
 
         }
@@ -198,9 +203,9 @@ public class ArsProviders {
         }
 
         @Override
-        public void collectJsons(CachedOutput cache) {
+        public void run(CachedOutput cache) throws IOException {
 
-            for (AbstractRitual r : RitualRegistry.getRitualMap().values()) {
+            for (AbstractRitual r : ArsNouveauAPI.getInstance().getRitualMap().values()) {
                 if(r.getRegistryName().getNamespace().equals(ArsCaelum.MODID) && !(r instanceof StarterIslandRitual)) {
                     addRitualPage(r);
                 }
@@ -209,7 +214,7 @@ public class ArsProviders {
             //check the superclass for examples
 
             for (PatchouliPage patchouliPage : pages) {
-                saveStable(cache, patchouliPage.build(), patchouliPage.path());
+                DataProvider.saveStable(cache, patchouliPage.build(), patchouliPage.path());
             }
 
         }
@@ -220,7 +225,7 @@ public class ArsProviders {
                     .withTextPage(ritual.getDescriptionKey())
                     .withPage(new CraftingPage(ritual.getRegistryName().toString()));
 
-            this.pages.add(new PatchouliPage(builder, output.resolve("data/" + ritual.getRegistryName().getNamespace() + "/patchouli_books/caelum_notes/en_us/entries/rituals/" + ritual.getRegistryName().getPath() + ".json")));
+            this.pages.add(new PatchouliPage(builder, this.generator.getOutputFolder().resolve("data/" + ritual.getRegistryName().getNamespace() + "/patchouli_books/caelum_notes/en_us/entries/rituals/" + ritual.getRegistryName().getPath() + ".json")));
         }
 
 
@@ -234,7 +239,7 @@ public class ArsProviders {
 
         @Override
         public Path getPath(ResourceLocation category, String fileName) {
-            return output.resolve("data/"+ root +"/patchouli_books/example/en_us/entries/" + category.getPath() + "/" + fileName + ".json");
+            return this.generator.getOutputFolder().resolve("data/"+ root +"/patchouli_books/example/en_us/entries/" + category.getPath() + "/" + fileName + ".json");
         }
     }
 

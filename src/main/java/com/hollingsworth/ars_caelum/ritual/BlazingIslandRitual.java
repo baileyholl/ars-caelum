@@ -4,13 +4,13 @@ import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.arsnouveau.api.ritual.StructureRitual;
 import com.hollingsworth.arsnouveau.client.particle.ParticleColor;
-import com.hollingsworth.arsnouveau.setup.registry.BiomeRegistry;
+import com.hollingsworth.arsnouveau.common.world.biome.ModBiomes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 
 public class BlazingIslandRitual extends StructureRitual {
     public BlazingIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "blazing"), new BlockPos(-13, -5, -13), 10000, BiomeRegistry.ARCHWOOD_FOREST);
+        super(new ResourceLocation(ArsCaelum.MODID, "blazing"), new BlockPos(-13, -5, -13), 10000, ModBiomes.ARCHWOOD_FOREST);
     }
 
     @Override
