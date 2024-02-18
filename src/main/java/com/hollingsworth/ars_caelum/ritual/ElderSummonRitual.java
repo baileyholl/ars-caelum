@@ -3,7 +3,7 @@ package com.hollingsworth.ars_caelum.ritual;
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
-import com.hollingsworth.arsnouveau.common.entity.EntityChimera;
+import com.hollingsworth.arsnouveau.common.entity.WildenChimera;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -16,7 +16,7 @@ import net.minecraft.world.item.Items;
 public class ElderSummonRitual extends AbstractRitual {
     @Override
     protected void tick() {
-        EntityChimera.spawnPhaseParticles(getPos().above(), getWorld(), 1);
+        WildenChimera.spawnPhaseParticles(getPos().above(), getWorld(), 1);
         if (getWorld().getGameTime() % 20 == 0)
             incrementProgress();
         if (getWorld().getGameTime() % 60 == 0 && !getWorld().isClientSide) {
