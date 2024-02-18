@@ -2,25 +2,25 @@ package com.hollingsworth.ars_caelum.datagen;
 
 import com.google.common.base.Preconditions;
 import com.hollingsworth.ars_caelum.ArsCaelum;
-import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
+import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
 import com.hollingsworth.arsnouveau.common.items.RitualTablet;
-import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import static com.hollingsworth.arsnouveau.api.RegistryHelper.getRegistryName;
+import static com.hollingsworth.arsnouveau.setup.registry.RegistryHelper.getRegistryName;
 
 public class ItemModelGen extends net.minecraftforge.client.model.generators.ItemModelProvider {
-    public ItemModelGen(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper) {
-        super(generator, modid, existingFileHelper);
+    public ItemModelGen(PackOutput pack, String modid, ExistingFileHelper existingFileHelper) {
+        super(pack, modid, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-        for (RitualTablet i : ArsNouveauAPI.getInstance().getRitualItemMap().values()) {
+        for (RitualTablet i : RitualRegistry.getRitualItemMap().values()) {
             if(!i.ritual.getRegistryName().getNamespace().equals(ArsCaelum.MODID))
                 continue;
             try {
