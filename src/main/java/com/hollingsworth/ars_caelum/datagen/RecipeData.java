@@ -2,12 +2,12 @@ package com.hollingsworth.ars_caelum.datagen;
 
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.lib.RitualLang;
-import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
+import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
 import com.hollingsworth.arsnouveau.common.datagen.ItemTagProvider;
 import com.hollingsworth.arsnouveau.common.items.RitualTablet;
-import com.hollingsworth.arsnouveau.setup.registry.BlockRegistry;
-import com.hollingsworth.arsnouveau.setup.registry.ItemsRegistry;
-import net.minecraft.data.PackOutput;
+import com.hollingsworth.arsnouveau.setup.BlockRegistry;
+import com.hollingsworth.arsnouveau.setup.ItemsRegistry;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -18,12 +18,12 @@ import net.minecraftforge.common.Tags;
 import java.util.function.Consumer;
 
 public class RecipeData extends com.hollingsworth.arsnouveau.common.datagen.RecipeDatagen {
-    public RecipeData(PackOutput pack) {
-        super(pack);
+    public RecipeData(DataGenerator generatorIn) {
+        super(generatorIn);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
         shapelessBuilder(getAddonRitual(RitualLang.COBBLE)).requires(BlockRegistry.CASCADING_LOG).requires(BlockRegistry.FROSTAYA_POD, 8).save(consumer);
 
         shapelessBuilder(getAddonRitual(RitualLang.BLAZING)).requires(BlockRegistry.BLAZING_SAPLING).requires(BlockRegistry.BLAZING_LOG).requires(Tags.Items.GEMS_DIAMOND).save(consumer);
@@ -50,6 +50,6 @@ public class RecipeData extends com.hollingsworth.arsnouveau.common.datagen.Reci
     }
 
     public RitualTablet getAddonRitual(String name) {
-        return RitualRegistry.getRitualItemMap().get(new ResourceLocation(ArsCaelum.MODID, name));
+        return ArsNouveauAPI.getInstance().getRitualItemMap().get(new ResourceLocation(ArsCaelum.MODID, name));
     }
 }
