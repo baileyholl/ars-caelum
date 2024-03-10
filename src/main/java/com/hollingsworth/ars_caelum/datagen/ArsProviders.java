@@ -13,6 +13,8 @@ import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.CrushRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.GlyphRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.ImbuementRecipeProvider;
+import com.hollingsworth.arsnouveau.common.datagen.patchouli.CraftingPage;
+import com.hollingsworth.arsnouveau.common.datagen.patchouli.PatchouliBuilder;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.Item;
@@ -208,6 +210,15 @@ public class ArsProviders {
                 saveStable(cache, patchouliPage.build(), patchouliPage.path());
             }
 
+        }
+
+        public void addRitualPage(AbstractRitual ritual) {
+            PatchouliBuilder builder = new PatchouliBuilder(RITUALS, "item." + ritual.getRegistryName().getNamespace() + "." + ritual.getRegistryName().getPath())
+                    .withIcon(ritual.getRegistryName().toString())
+                    .withTextPage(ritual.getDescriptionKey())
+                    .withPage(new CraftingPage(ritual.getRegistryName().toString()));
+
+            this.pages.add(new PatchouliPage(builder, this.output.resolve("assets/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/rituals/" + ritual.getRegistryName().getPath() + ".json")));
         }
 
         /**
