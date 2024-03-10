@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ars_caelum:ritual_conjure_island_cascading"
+        "recipe": "ars_caelum:ritual_elder_summon"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "ars_caelum:ritual_conjure_island_cascading"
+      "ars_caelum:ritual_elder_summon"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

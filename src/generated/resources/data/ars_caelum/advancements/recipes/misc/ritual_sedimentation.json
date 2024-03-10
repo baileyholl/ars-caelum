@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ars_caelum:ritual_conjure_island_village"
+        "recipe": "ars_caelum:ritual_sedimentation"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "ars_caelum:ritual_conjure_island_village"
+      "ars_caelum:ritual_sedimentation"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
