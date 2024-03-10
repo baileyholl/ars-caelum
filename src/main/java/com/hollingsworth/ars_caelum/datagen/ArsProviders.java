@@ -3,7 +3,6 @@ package com.hollingsworth.ars_caelum.datagen;
 import com.hollingsworth.ars_caelum.ArsCaelum;
 import com.hollingsworth.ars_caelum.ritual.StarterIslandRitual;
 import com.hollingsworth.arsnouveau.ArsNouveau;
-import com.hollingsworth.arsnouveau.api.ArsNouveauAPI;
 import com.hollingsworth.arsnouveau.api.enchanting_apparatus.EnchantingApparatusRecipe;
 import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
 import com.hollingsworth.arsnouveau.api.ritual.AbstractRitual;
@@ -14,19 +13,14 @@ import com.hollingsworth.arsnouveau.common.datagen.ApparatusRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.CrushRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.GlyphRecipeProvider;
 import com.hollingsworth.arsnouveau.common.datagen.ImbuementRecipeProvider;
-import com.hollingsworth.arsnouveau.common.datagen.patchouli.CraftingPage;
-import com.hollingsworth.arsnouveau.common.datagen.patchouli.PatchouliBuilder;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.common.Tags;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +31,10 @@ public class ArsProviders {
 
     static String root = ArsCaelum.MODID;
 
-    public static class CrushProvider extends CrushRecipeProvider{
+    public static class CrushProvider extends CrushRecipeProvider {
         public DataGenerator generator;
         public List<CrushRecipe> replaceAn = new ArrayList<>();
+
         public CrushProvider(DataGenerator generatorIn) {
             super(generatorIn);
             this.generator = generatorIn;
@@ -87,6 +82,7 @@ public class ArsProviders {
         private static Path getRecipePath(Path pathIn, String str) {
             return pathIn.resolve("data/" + ArsCaelum.MODID + "/recipes/" + str + ".json");
         }
+
         private static Path getANPath(Path pathIn, String str) {
             return pathIn.resolve("data/" + ArsNouveau.MODID + "/recipes/" + str + ".json");
         }
@@ -109,13 +105,14 @@ public class ArsProviders {
             }
 
         }
+
         protected static Path getScribeGlyphPath(Path pathIn, Item glyph) {
             return pathIn.resolve("data/" + root + "/recipes/" + getRegistryName(glyph).getPath() + ".json");
         }
 
         @Override
         public String getName() {
-            return "Example Glyph Recipes";
+            return "Caelum Glyph Recipes";
         }
     }
 
@@ -137,17 +134,16 @@ public class ArsProviders {
             );
 
             recipes.add(builder()
-                    .withPedestalItem(3,Items.SCULK_SENSOR)
+                    .withPedestalItem(3, Items.SCULK_SENSOR)
                     .buildEnchantmentRecipe(Enchantments.SWIFT_SNEAK, 1, 3000));
             recipes.add(builder()
-                    .withPedestalItem(3,Items.SCULK_SHRIEKER)
+                    .withPedestalItem(3, Items.SCULK_SHRIEKER)
                     .buildEnchantmentRecipe(Enchantments.SWIFT_SNEAK, 2, 6000));
-
             recipes.add(builder()
-                    .withPedestalItem(3,Items.SCULK_CATALYST)
+                    .withPedestalItem(3, Items.SCULK_CATALYST)
                     .buildEnchantmentRecipe(Enchantments.SWIFT_SNEAK, 3, 9000));
-            for (EnchantingApparatusRecipe g : recipes){
-                if (g != null){
+            for (EnchantingApparatusRecipe g : recipes) {
+                if (g != null) {
                     Path path = getRecipePath(output, g.getId().getPath());
                     saveStable(cache, g.asRecipe(), path);
                 }
@@ -155,38 +151,38 @@ public class ArsProviders {
 
         }
 
-        protected static Path getRecipePath(Path pathIn, String str){
-            return pathIn.resolve("data/"+ root +"/recipes/" + str + ".json");
+        protected static Path getRecipePath(Path pathIn, String str) {
+            return pathIn.resolve("data/" + root + "/recipes/" + str + ".json");
         }
 
         @Override
         public String getName() {
-            return "Example Apparatus";
+            return "Caelum Apparatus";
         }
     }
 
     public static class ImbuementProvider extends ImbuementRecipeProvider {
 
-        public ImbuementProvider(DataGenerator generatorIn){
+        public ImbuementProvider(DataGenerator generatorIn) {
             super(generatorIn);
         }
 
         @Override
         public void collectJsons(CachedOutput cache) {
-            for(ImbuementRecipe g : recipes){
+            for (ImbuementRecipe g : recipes) {
                 Path path = getRecipePath(output, g.getId().getPath());
                 saveStable(cache, g.asRecipe(), path);
             }
 
         }
 
-        protected Path getRecipePath(Path pathIn, String str){
-            return pathIn.resolve("data/"+ root +"/recipes/" + str + ".json");
+        protected Path getRecipePath(Path pathIn, String str) {
+            return pathIn.resolve("data/" + root + "/recipes/" + str + ".json");
         }
 
         @Override
         public String getName() {
-            return "Example Imbuement";
+            return "Caelum Imbuement";
         }
 
     }
@@ -201,7 +197,7 @@ public class ArsProviders {
         public void collectJsons(CachedOutput cache) {
 
             for (AbstractRitual r : RitualRegistry.getRitualMap().values()) {
-                if(r.getRegistryName().getNamespace().equals(ArsCaelum.MODID) && !(r instanceof StarterIslandRitual)) {
+                if (r.getRegistryName().getNamespace().equals(ArsCaelum.MODID) && !(r instanceof StarterIslandRitual)) {
                     addRitualPage(r);
                 }
             }
@@ -214,28 +210,14 @@ public class ArsProviders {
 
         }
 
-        public void addRitualPage(AbstractRitual ritual) {
-            PatchouliBuilder builder = new PatchouliBuilder(RITUALS, "item." + ritual.getRegistryName().getNamespace() + "." + ritual.getRegistryName().getPath())
-                    .withIcon(ritual.getRegistryName().toString())
-                    .withTextPage(ritual.getDescriptionKey())
-                    .withPage(new CraftingPage(ritual.getRegistryName().toString()));
-
-            this.pages.add(new PatchouliPage(builder, output.resolve("data/" + ritual.getRegistryName().getNamespace() + "/patchouli_books/caelum_notes/en_us/entries/rituals/" + ritual.getRegistryName().getPath() + ".json")));
-        }
-
-
         /**
          * Gets a name for this provider, to use in logging.
          */
         @Override
         public String getName() {
-            return "Example Patchouli Datagen";
+            return "Caelum Patchouli Datagen";
         }
 
-        @Override
-        public Path getPath(ResourceLocation category, String fileName) {
-            return output.resolve("data/"+ root +"/patchouli_books/example/en_us/entries/" + category.getPath() + "/" + fileName + ".json");
-        }
     }
 
 }
