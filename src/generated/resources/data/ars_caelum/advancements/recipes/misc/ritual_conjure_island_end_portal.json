@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "ars_caelum:ritual_conjure_island_blazing"
+        "recipe": "ars_caelum:ritual_conjure_island_end_portal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "ars_caelum:ritual_conjure_island_blazing"
+      "ars_caelum:ritual_conjure_island_end_portal"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pointed_dripstone"
+        "recipe": "ars_caelum:ritual_mana_regeneration"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pointed_dripstone"
+      "ars_caelum:ritual_mana_regeneration"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

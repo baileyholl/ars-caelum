@@ -6,44 +6,28 @@
   },
   "pedestalItems": [
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     },
     {
-      "item": {
-        "item": "minecraft:nautilus_shell"
-      }
+      "item": "minecraft:nautilus_shell"
     }
   ],
   "reagent": [

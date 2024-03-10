@@ -46,19 +46,6 @@ A skyblock addon for Ars Nouveau
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.ars_caelum]]
-    modId="patchouli"
-    mandatory=true
-    versionRange="[1.18.1-61,)"
-    ordering="AFTER"
-    side="BOTH"
-
-[[dependencies.ars_caelum]]
-    modId="curios"
-    mandatory=true
-    versionRange="[1.18.1-5.0.3.0,)"
-    ordering="AFTER"
-    side="BOTH"
 
 [[dependencies.ars_caelum]]
     modId="ars_nouveau"

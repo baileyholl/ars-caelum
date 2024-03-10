@@ -30,5 +30,6 @@
     "recipes": [
       "ars_caelum:ritual_conjure_island_sculk"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
