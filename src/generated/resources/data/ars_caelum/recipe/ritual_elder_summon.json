@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "tag": "minecraft:fishes"
+    },
+    {
+      "item": "ars_nouveau:blue_archwood_log"
+    },
+    {
+      "tag": "c:rods/blaze"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ars_caelum:ritual_elder_summon"
+  }
+}

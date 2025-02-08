@@ -1,0 +1,40 @@
+{
+  "type": "ars_nouveau:crush",
+  "input": {
+    "tag": "c:stones"
+  },
+  "output": [
+    {
+      "chance": 1.0,
+      "maxRange": 1,
+      "stack": {
+        "count": 1,
+        "id": "minecraft:gravel"
+      }
+    },
+    {
+      "chance": 0.2,
+      "maxRange": 3,
+      "stack": {
+        "count": 1,
+        "id": "minecraft:gold_nugget"
+      }
+    },
+    {
+      "chance": 0.2,
+      "maxRange": 3,
+      "stack": {
+        "count": 1,
+        "id": "minecraft:iron_nugget"
+      }
+    },
+    {
+      "chance": 0.2,
+      "maxRange": 1,
+      "stack": {
+        "count": 1,
+        "id": "minecraft:raw_copper"
+      }
+    }
+  ]
+}

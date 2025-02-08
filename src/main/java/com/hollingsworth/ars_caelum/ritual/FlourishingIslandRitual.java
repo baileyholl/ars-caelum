@@ -10,12 +10,12 @@ import net.minecraft.world.level.biome.Biomes;
 
 public class FlourishingIslandRitual extends StructureRitual {
     public FlourishingIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "flourishing"),  new BlockPos(-13, -5, -13), 10000, Biomes.MANGROVE_SWAMP);
+        super(ArsCaelum.prefix("flourishing"),  new BlockPos(-13, -5, -13), 10000, Biomes.MANGROVE_SWAMP);
     }
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.FLOURISHING);
+        return ArsCaelum.prefix(RitualLang.FLOURISHING);
     }
 
     @Override
@@ -31,10 +31,5 @@ public class FlourishingIslandRitual extends StructureRitual {
     @Override
     public ParticleColor getCenterColor() {
         return new ParticleColor(100, 255, 100);
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
     }
 }

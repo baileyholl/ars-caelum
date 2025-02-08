@@ -8,12 +8,13 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import static com.hollingsworth.arsnouveau.setup.registry.RegistryHelper.getRegistryName;
 
-public class ItemModelGen extends net.minecraftforge.client.model.generators.ItemModelProvider {
+public class ItemModelGen extends ItemModelProvider {
     public ItemModelGen(PackOutput pack, String modid, ExistingFileHelper existingFileHelper) {
         super(pack, modid, existingFileHelper);
     }
@@ -33,7 +34,7 @@ public class ItemModelGen extends net.minecraftforge.client.model.generators.Ite
 
     private ResourceLocation itemTexture(final Item item) {
         final ResourceLocation name = registryName(item);
-        return new ResourceLocation(name.getNamespace(), "item" + "/" + name.getPath());
+        return ResourceLocation.fromNamespaceAndPath(name.getNamespace(), "item" + "/" + name.getPath());
     }
 
     private ResourceLocation registryName(final Item item) {
@@ -47,11 +48,11 @@ public class ItemModelGen extends net.minecraftforge.client.model.generators.Ite
 
     private ResourceLocation itemTexture(final Block item) {
         final ResourceLocation name = registryName(item);
-        return new ResourceLocation(name.getNamespace(), "items" + "/" + name.getPath());
+        return ResourceLocation.fromNamespaceAndPath(name.getNamespace(), "items" + "/" + name.getPath());
     }
 
     private ResourceLocation spellTexture(final Item item) {
         final ResourceLocation name = registryName(item);
-        return new ResourceLocation(name.getNamespace(), "items" + "/" + name.getPath().replace("glyph_", ""));
+        return ResourceLocation.fromNamespaceAndPath(   name.getNamespace(), "items" + "/" + name.getPath().replace("glyph_", ""));
     }
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ars_nouveau:blue_archwood_sapling"
+    },
+    {
+      "item": "ars_nouveau:blue_archwood_log"
+    },
+    {
+      "tag": "c:gems/diamond"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "ars_caelum:ritual_conjure_island_cascading"
+  }
+}

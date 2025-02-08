@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class VillageIslandRitual extends StructureRitual {
     public VillageIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "village_2"), new BlockPos(-13, -5, -13), 10000, null);
+        super(ArsCaelum.prefix("village_2"), new BlockPos(-13, -5, -13), 10000, null);
     }
 
     @Override
@@ -23,11 +23,6 @@ public class VillageIslandRitual extends StructureRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.VILLAGE);
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
+        return ArsCaelum.prefix(RitualLang.VILLAGE);
     }
 }

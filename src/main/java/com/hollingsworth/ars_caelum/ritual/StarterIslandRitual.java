@@ -21,12 +21,12 @@ public class StarterIslandRitual extends StructureRitual {
     @Override
     public void setup() {
         if(!getWorld().isClientSide) {
-            this.structure = new ResourceLocation(CaelumConfig.STARTER_ISLAND_RL.get());
+            this.structure = ResourceLocation.parse(CaelumConfig.STARTER_ISLAND_RL.get());
             this.offset = new BlockPos(CaelumConfig.STARTER_RITUAL_OFFSET.get().get(0), CaelumConfig.STARTER_RITUAL_OFFSET.get().get(1), CaelumConfig.STARTER_RITUAL_OFFSET.get().get(2));
             this.sourceRequired = CaelumConfig.STARTER_RITUAL_SOURCE.get();
             if (!CaelumConfig.STARTER_RITUAL_BIOME.get().isEmpty()) {
                 getWorld().registryAccess().registry(Registries.BIOME).ifPresent(biomes -> {
-                    Biome biome1 = biomes.get(new ResourceLocation(CaelumConfig.STARTER_RITUAL_BIOME.get()));
+                    Biome biome1 = biomes.get(ResourceLocation.parse(CaelumConfig.STARTER_RITUAL_BIOME.get()));
                     if (biome1 != null) {
                         Optional<ResourceKey<Biome>> biomeKey = biomes.getResourceKey(biome1);
                         biomeKey.ifPresent(biomeResourceKey -> {
@@ -41,16 +41,11 @@ public class StarterIslandRitual extends StructureRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.STARTER);
+        return ArsCaelum.prefix(RitualLang.STARTER);
     }
 
     @Override
     public String getLangName() {
         return "Conjure Island: Starter";
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
     }
 }

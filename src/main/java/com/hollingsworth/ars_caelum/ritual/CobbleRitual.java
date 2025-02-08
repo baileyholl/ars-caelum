@@ -58,7 +58,7 @@ public class CobbleRitual extends AbstractRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.COBBLE);
+        return ArsCaelum.prefix(RitualLang.COBBLE);
     }
 
 

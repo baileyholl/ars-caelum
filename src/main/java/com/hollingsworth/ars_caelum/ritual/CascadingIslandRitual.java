@@ -10,12 +10,12 @@ import net.minecraft.world.level.biome.Biomes;
 
 public class CascadingIslandRitual extends StructureRitual {
     public CascadingIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "cascading"),  new BlockPos(-13, -5, -13), 10000, Biomes.WARM_OCEAN);
+        super(ArsCaelum.prefix("cascading"),  new BlockPos(-13, -5, -13), 10000, Biomes.WARM_OCEAN);
     }
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.CASCADING);
+        return ArsCaelum.prefix(RitualLang.CASCADING);
     }
 
     @Override
@@ -31,10 +31,5 @@ public class CascadingIslandRitual extends StructureRitual {
     @Override
     public ParticleColor getCenterColor() {
         return new ParticleColor(100, 100, 255);
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
     }
 }
