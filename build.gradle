@@ -65,7 +65,7 @@ repositories {
 }
 
 base {
-    version = "${minecraft_version}-${new File('version').text.trim()}"
+    version = "${minecraft_version}-${mod_version}"
     group = mod_group_id
     archivesName = mod_id
 }
@@ -134,28 +134,20 @@ dependencies {
     implementation "top.theillusivec4.curios:curios-neoforge:${curios_version}+1.21"
 }
 
-var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
-    var replaceProperties = [
-            minecraft_version      : minecraft_version,
-            minecraft_version_range: minecraft_version_range,
-            neo_version            : neo_version,
-            neo_version_range      : neo_version_range,
-            loader_version_range   : loader_version_range,
-            mod_id                 : mod_id,
-            mod_name               : mod_name,
-            mod_license            : mod_license,
-            mod_version            : version,
-            mod_authors            : mod_authors,
-            mod_description        : mod_description
-    ]
-    inputs.properties replaceProperties
-    expand replaceProperties
-    from "src/main/templates"
-    into "build/generated/sources/modMetadata"
+jar {
+    manifest {
+        attributes([
+                "Specification-Title": "Ars Caelum",
+                "Specification-Vendor": "baileyh",
+                "Specification-Version": "1", // We are version 1 of ourselves
+                "Implementation-Title": project.name,
+                "Implementation-Version": mod_version,
+                "Implementation-Vendor" :"baileyh",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs": "ars_caelum.mixins.json"
+        ])
+    }
 }
-
-sourceSets.main.resources.srcDir generateModMetadata
-neoForge.ideSyncTask generateModMetadata
 
 publishing {
     publications {
