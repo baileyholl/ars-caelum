@@ -8,12 +8,12 @@ import net.minecraft.resources.ResourceLocation;
 
 public class GeodeIslandRitual extends StructureRitual {
     public GeodeIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "geode"),  new BlockPos(-8, -3, -7), 10000, null);
+        super(ArsCaelum.prefix("geode"),  new BlockPos(-8, -3, -7), 10000, null);
     }
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.GEODE);
+        return ArsCaelum.prefix(RitualLang.GEODE);
     }
 
     @Override
@@ -24,10 +24,5 @@ public class GeodeIslandRitual extends StructureRitual {
     @Override
     public String getLangDescription() {
         return "Creates an island in the shape of an Amethyst Geode. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
     }
 }

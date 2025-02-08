@@ -1,0 +1,17 @@
+{
+  "type": "ars_nouveau:enchantment",
+  "enchantment": "minecraft:swift_sneak",
+  "level": 1,
+  "pedestalItems": [
+    {
+      "item": "minecraft:sculk_sensor"
+    },
+    {
+      "item": "minecraft:sculk_sensor"
+    },
+    {
+      "item": "minecraft:sculk_sensor"
+    }
+  ],
+  "sourceCost": 3000
+}

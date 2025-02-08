@@ -9,7 +9,7 @@ import net.minecraft.world.level.biome.Biomes;
 
 public class SculkIslandRitual extends StructureRitual {
     public SculkIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "sculk"),  new BlockPos(-13, -5, -13), 10000, Biomes.DEEP_DARK);
+        super(ArsCaelum.prefix("sculk"),  new BlockPos(-13, -5, -13), 10000, Biomes.DEEP_DARK);
     }
 
     @Override
@@ -24,11 +24,6 @@ public class SculkIslandRitual extends StructureRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.SCULK);
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
+        return ArsCaelum.prefix(RitualLang.SCULK);
     }
 }

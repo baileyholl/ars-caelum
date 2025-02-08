@@ -10,12 +10,12 @@ import net.minecraft.resources.ResourceLocation;
 
 public class BlazingIslandRitual extends StructureRitual {
     public BlazingIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "blazing"), new BlockPos(-13, -5, -13), 10000, BiomeRegistry.ARCHWOOD_FOREST);
+        super(ArsCaelum.prefix("blazing"), new BlockPos(-13, -5, -13), 10000, BiomeRegistry.ARCHWOOD_FOREST);
     }
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.BLAZING);
+        return ArsCaelum.prefix(RitualLang.BLAZING);
     }
 
     @Override
@@ -31,10 +31,5 @@ public class BlazingIslandRitual extends StructureRitual {
     @Override
     public ParticleColor getCenterColor() {
         return new ParticleColor(255, 100, 100);
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
     }
 }

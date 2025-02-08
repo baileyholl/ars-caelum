@@ -18,7 +18,7 @@ public class ManaRegenRitual extends AbstractRitual {
         }else{
             if(getWorld().getGameTime() % 40 == 0){
                 getWorld().getEntitiesOfClass(Player.class, new AABB(getPos()).inflate(5)).forEach(entity -> {
-                    entity.addEffect(new MobEffectInstance(ModPotions.MANA_REGEN_EFFECT.get(), 20 * 10, 0, false, false, true));
+                    entity.addEffect(new MobEffectInstance(ModPotions.MANA_REGEN_EFFECT, 20 * 10, 0, false, false, true));
                 });
             }
         }
@@ -26,7 +26,7 @@ public class ManaRegenRitual extends AbstractRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.MANA_REGEN);
+        return ArsCaelum.prefix(RitualLang.MANA_REGEN);
     }
 
     @Override

@@ -9,12 +9,12 @@ import net.minecraft.world.level.biome.Biomes;
 
 public class VexingIslandRitual extends StructureRitual {
     public VexingIslandRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "vexing"),  new BlockPos(-16, -5, -13), 10000, Biomes.MUSHROOM_FIELDS);
+        super(ArsCaelum.prefix("vexing"),  new BlockPos(-16, -5, -13), 10000, Biomes.MUSHROOM_FIELDS);
     }
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.VEXING);
+        return ArsCaelum.prefix(RitualLang.VEXING);
     }
 
     @Override
@@ -25,10 +25,5 @@ public class VexingIslandRitual extends StructureRitual {
     @Override
     public String getLangDescription() {
         return "Creates an island of Vexing Archwoods, source berries, mycelium, and mushrooms. Converts the area to Mushroom Island. Requires a full jar of Source to begin. NOTE: This ritual should be performed at least 14 blocks from any other block. ";
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
     }
 }

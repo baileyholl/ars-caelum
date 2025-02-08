@@ -8,12 +8,12 @@ import net.minecraft.resources.ResourceLocation;
 
 public class EndRitual extends StructureRitual {
     public EndRitual() {
-        super(new ResourceLocation(ArsCaelum.MODID, "frame"), new BlockPos(-5,-1,-4), 10000, null);
+        super(ArsCaelum.prefix("frame"), new BlockPos(-5,-1,-4), 10000, null);
     }
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation("ars_caelum", RitualLang.END_PORTAL);
+        return ArsCaelum.prefix(RitualLang.END_PORTAL);
     }
 
     @Override
@@ -24,10 +24,5 @@ public class EndRitual extends StructureRitual {
     @Override
     public String getLangDescription() {
         return "Creates an island with an end portal. This ritual requires a full jar of Source. NOTE: This ritual must be performed 14 blocks away from other blocks.";
-    }
-
-    @Override
-    public boolean canBeTraded() {
-        return false;
     }
 }

@@ -1,17 +1,9 @@
 package com.hollingsworth.ars_caelum;
 
 import com.hollingsworth.ars_caelum.ritual.*;
-import com.hollingsworth.arsnouveau.api.registry.GlyphRegistry;
 import com.hollingsworth.arsnouveau.api.registry.RitualRegistry;
-import com.hollingsworth.arsnouveau.api.spell.AbstractSpellPart;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ArsNouveauRegistry {
-
-    public static List<AbstractSpellPart> registeredSpells = new ArrayList<>();
-
     public static void registerGlyphs(){
         RitualRegistry.registerRitual(new ManaRegenRitual());
         RitualRegistry.registerRitual(new CobbleRitual());
@@ -26,10 +18,4 @@ public class ArsNouveauRegistry {
         RitualRegistry.registerRitual(new ElderSummonRitual());
         RitualRegistry.registerRitual(new VillageIslandRitual());
     }
-
-    public static void register(AbstractSpellPart spellPart){
-        GlyphRegistry.registerSpell(spellPart);
-        registeredSpells.add(spellPart);
-    }
-
 }

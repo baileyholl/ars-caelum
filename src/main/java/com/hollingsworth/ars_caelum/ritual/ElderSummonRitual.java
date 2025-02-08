@@ -53,7 +53,7 @@ public class ElderSummonRitual extends AbstractRitual {
 
     @Override
     public ResourceLocation getRegistryName() {
-        return new ResourceLocation(ArsCaelum.MODID, RitualLang.ELDER_SUMMON);
+        return ArsCaelum.prefix(RitualLang.ELDER_SUMMON);
     }
 
     @Override

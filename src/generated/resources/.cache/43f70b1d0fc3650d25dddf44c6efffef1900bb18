@@ -1,5 +1,5 @@
-// 1.20.1	2024-01-18T18:31:01.6271334	Crush
-2839a5fadb1af05a65eaaec68b690eda6086cea6 data/ars_nouveau/recipes/crush_cobblestone.json
-a6af5d764aec31cd166a9aa948cedb7cef2388c6 data/ars_nouveau/recipes/crush_gravel.json
-0e9cd50bcd35335ad5a9e8cbf1aa109a7c097ef5 data/ars_nouveau/recipes/crush_sand.json
-1471336b09309efc8d28dfc0610a115aa547421b data/ars_nouveau/recipes/crush_stone.json
+// 1.21.1	2024-09-05T21:42:03.234663398	Crush
+456c86b61cb090b95ee95e35a64e66ae54be4180 data/ars_nouveau/recipe/cobblestone.json
+7700254abec20b2c8aeb91805d085f870ab7b61c data/ars_nouveau/recipe/gravel.json
+037a3a46a010cee97bbedf291ac9b70f19172217 data/ars_nouveau/recipe/sand.json
+cee32f46c4e3f2709d2fe2cd873f2c1fec61f837 data/ars_nouveau/recipe/stone.json
